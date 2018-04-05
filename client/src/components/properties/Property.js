@@ -6,8 +6,8 @@ const Property = () => {
   return (
     <div>
       <div>Property Page</div>
-      <Available />
       <PropertySearch />
+      <Available />
     </div>
   );
 };

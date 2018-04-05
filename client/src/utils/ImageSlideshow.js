@@ -15,14 +15,14 @@ class SimpleSlider extends Component {
         })
     }
     render() {
-        Object.size = (obj) => {
-            let size = 0, key;
-            for (key in obj) {
-                if (obj.hasOwnProperty(key)) size++;
-            }
-            return size;
-        };
-         const size = Object.size(this.props.images);
+        // Object.size = (obj) => {
+        //     let size = 0, key;
+        //     for (key in obj) {
+        //         if (obj.hasOwnProperty(key)) size++;
+        //     }
+        //     return size;
+        // };
+        //  const size = Object.size(this.props.images);
         
         var settings = {
           dots: true,

@@ -10,8 +10,7 @@ class Available extends Component {
   }
 
   renderAvailable() {
-    return this.props.properties
-    .filter(property => property.available === true)
+    return this.props.properties.filter(property => property.available === true)
       .map(available => {
         return (
           <div key={available.label}>

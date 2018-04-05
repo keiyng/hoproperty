@@ -7,9 +7,10 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-        <Link to="/contact" className="right">Contact</Link>
+          <Link to="/" className="right">Home</Link>
           <Link to="/property" className="right">Properties</Link>
           <Link to="/application" className="right">Application</Link>
+          <Link to="/contact" className="right">Contact</Link>
           {/* <ul className="right">{this.renderContent()}</ul> */}
         </div>
       </nav>
