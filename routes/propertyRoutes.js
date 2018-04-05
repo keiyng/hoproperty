@@ -9,7 +9,6 @@ module.exports = app => {
       owner: false
     });
     res.send(properties);
-    console.log('this is /property');
   });
 
   app.get('/api/property/:label', async (req, res) => {
