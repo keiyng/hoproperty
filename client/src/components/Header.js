@@ -11,7 +11,6 @@ class Header extends Component {
           <Link to="/property" className="right">Properties</Link>
           <Link to="/application" className="right">Application</Link>
           <Link to="/contact" className="right">Contact</Link>
-          {/* <ul className="right">{this.renderContent()}</ul> */}
         </div>
       </nav>
     );

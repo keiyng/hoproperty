@@ -4,7 +4,7 @@ import { fetchProperties } from '../../actions';
 import { Link } from 'react-router-dom';
 
 class PropertySearch extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       input: '',
