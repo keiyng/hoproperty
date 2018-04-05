@@ -2,18 +2,18 @@ const nodemailer = require('nodemailer');
 const keys = require('../config/keys');
 const mailer = require('../services/mailing/config');
 const applicationTemplate = require('../services/mailing/templates/application');
+const queryTemplate = require('../services/mailing/templates/query');
 
 module.exports = app => {
-  // POST!
-  app.get('/mailing/application', (req, res) => {
-    console.log('this is /mailing/application');
+  app.post('/api/application', (req, res) => {
+    const application = req.body;
 
     const mailOptions = {
       from: keys.emailFrom,
       to: keys.emailTo,
-      subject: 'nodemailer testing',
-      html: applicationTemplate,
-      replyTo: keys.replyTo,
+      subject: `Rental Application - ${application.address}`,
+      html: applicationTemplate(application),
+      replyTo: application.email,
       attachments: []
     };
 
@@ -24,16 +24,18 @@ module.exports = app => {
         console.log(`email sent! ${info.response}`);
       }
     });
+    res.redirect('/');
   });
-  app.post('/mailing/query', (req, res) => {
-    console.log('this is /mailing/application');
+
+  app.post('/api/query', (req, res) => {
+    const query = req.body;
 
     const mailOptions = {
       from: keys.emailFrom,
       to: keys.emailTo,
       subject: 'Website Query',
-      html: '',
-      replyTo: keys.replyTo
+      html: queryTemplate(query),
+      replyTo: query.email
     };
 
     mailer.transporter.sendMail(mailOptions, (err, info) => {
@@ -43,5 +45,7 @@ module.exports = app => {
         console.log(`email sent! ${info.response}`);
       }
     });
+
+
   });
 };

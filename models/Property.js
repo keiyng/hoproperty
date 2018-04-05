@@ -10,7 +10,9 @@ const propertySchema = new Schema({
   block: Number,
   lot: Number,
   owner: String,
-  available: Boolean
+  available: Boolean,
+  image: String,
+  images: [String]
 });
 
 mongoose.model('properties', propertySchema);

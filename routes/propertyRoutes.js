@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 const Property = mongoose.model('properties');
 
 module.exports = app => {
-  app.get('/property/rental', async (req, res) => {
-    const availableRentals = await Property.find({ available: true }).select({
+  app.get('/api/property', async (req, res) => {
+    const properties = await Property.find({}).select({
       block: false,
       lot: false,
       owner: false
     });
-    res.send(availableRentals);
-    console.log('this is /rental');
+    res.send(properties);
+    console.log('this is /property');
   });
 
-  app.get('/property/rental/:label', async (req, res) => {
+  app.get('/api/property/:label', async (req, res) => {
     const property = await Property.findOne({
       label: req.params.label,
       available: true
@@ -22,6 +22,6 @@ module.exports = app => {
     }
     res.status(404).send("this page doesn't exist");
 
-    console.log('this is /rental/label');
+    console.log('this is /property/:label');
   });
 };
