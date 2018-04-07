@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 require('./routes/propertyRoutes')(app);
 require('./routes/mailingRoutes')(app);
+require('./services/rentalBroadcast');
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

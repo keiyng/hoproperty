@@ -46,6 +46,6 @@ module.exports = app => {
       }
     });
 
-
+    res.redirect('/');
   });
 };

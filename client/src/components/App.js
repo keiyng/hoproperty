@@ -7,6 +7,7 @@ import Home from './Home';
 import Property from './properties/Property';
 import AvailableDetails from './properties/AvailableDetails';
 import Application from './application/Application';
+import TenantHome from './tenants/TenantHome';
 import QueryForm from './QueryForm';
 
 
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/property" component={Property} />
             <Route exact path="/property/:label" component={AvailableDetails}/>
             <Route exact path="/application" component={Application} />
+            <Route exact path="/tenant" component={TenantHome} />
             <Route exact path="/contact" component={QueryForm}/>
           </div>
         </BrowserRouter>

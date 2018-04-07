@@ -11,7 +11,6 @@ const propertySchema = new Schema({
   lot: Number,
   owner: String,
   available: Boolean,
-  image: String,
   images: [String]
 });
 
