@@ -32,13 +32,13 @@ brodcastAvailables = async () => {
             replyTo: keys.emailFrom
           };
 
-          mailer.transporter.sendMail(mailOptions, (err, info) => {
-            if (err) {
-              console.log(err);
-            } else {
-              console.log(`email sent! ${info.response}`);
-            }
-          });
+          // mailer.transporter.sendMail(mailOptions, (err, info) => {
+          //   if (err) {
+          //     console.log(err);
+          //   } else {
+          //     console.log(`email sent! ${info.response}`);
+          //   }
+          // });
         });
         break;
       }
