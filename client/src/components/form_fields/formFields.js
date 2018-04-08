@@ -165,3 +165,26 @@ export const applicationFields = [
     noValueError: 'required'
   }
 ];
+
+export const subscribeFields = [
+  {
+    label: 'Name',
+    name: 'name',
+    type: 'text',
+    noValueError: 'Name is required'
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    noValueError: 'Email is required'
+  },
+  {
+    label: 'Please select the counties you wish to receive notifications about:',
+    name: 'county',
+    type: 'checkbox',
+    options: ['Bergen', 'Essex', 'Gloucester', 'Hudson', 'Mercer', 'Middlessex', 'Monmouth', 'Morris', 'Passaic', 'Sussex', 'Union', 'Warren'],
+    noValueError: 'required'
+  },
+
+]

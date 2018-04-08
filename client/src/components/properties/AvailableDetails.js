@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchAvailableDetails } from '../../actions';
 import SimpleSlider from '../../utils/ImageSlideshow';
-// import _ from 'lodash';
-
 
 class AvailableDetails extends Component {
 

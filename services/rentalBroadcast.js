@@ -5,30 +5,31 @@ const mailer = require('../services/mailing/config');
 const mongoose = require('mongoose');
 const Subscriber = mongoose.model('subscribers');
 const Property = mongoose.model('properties');
+const broadcastTemplate = require('./mailing/templates/broadcast');
 
 const broadcastRule = new schedule.RecurrenceRule();
-broadcastRule.second = 10;
+broadcastRule.second = 40;
+// broadcastRule.dayOfWeek = 5;
 
 brodcastAvailables = async () => {
-  let availableList = [];
+let countyList = [];
 
-  const availables = await Property.find({ available: true });
-  availables.map(available =>
-    availableList.push(available.county.toLowerCase())
-  );
+const availables = await Property.find({ available: true });
+
+availables.map(available => {
+    countyList.push(available.county.toLowerCase());
+  });
 
   const subscribers = await Subscriber.find({});
-
   subscribers.map(subscriber => {
     for (let i = 0; i < subscriber.options.length; i++) {
-      if (availableList.indexOf(subscriber.options[i]) > -1) {
-        console.log(subscriber.options[i], subscriber.name);
+      if (countyList.indexOf(subscriber.options[i]) > -1) {
         const broadcast = schedule.scheduleJob(broadcastRule, () => {
           const mailOptions = {
             from: keys.emailFrom,
             to: subscriber.email,
-            subject: `Rentals this week in ${subscriber.options[i]} and more!`,
-            text: 'content~',
+            subject: `Rentals this week in ${subscriber.options[i][0].toUpperCase() + subscriber.options[i].substr(1)} county and more!`,
+            html: broadcastTemplate(subscriber, availables),
             replyTo: keys.emailFrom
           };
 

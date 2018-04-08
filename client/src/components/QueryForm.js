@@ -9,8 +9,6 @@ import TextareaField from './form_fields/TextareaField';
 import * as actions from '../actions';
 
 let QueryForm = ({formValues, submitQuery, submitting, history}) => {
-  // console.log("handleSubmit", handleSubmit)
-  // console.log("values:", value)
   const renderFields = _.map(queryFields, ({ label, name, type }) => {
     if (type === 'textarea') {
       return (

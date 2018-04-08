@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+
 require('./models/Property');
 require('./models/Tenant');
 require('./models/Subscriber');
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 require('./routes/propertyRoutes')(app);
 require('./routes/mailingRoutes')(app);
+require('./routes/subscribeRoutes')(app);
 require('./services/rentalBroadcast');
 
 if (process.env.NODE_ENV === 'production') {

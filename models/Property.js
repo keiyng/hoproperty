@@ -7,9 +7,9 @@ const propertySchema = new Schema({
   county: String,
   township_borough: String,
   type: String,
-  block: Number,
-  lot: Number,
-  owner: String,
+  bedroom: String,
+  bathroom: String,
+  rent: String,
   available: Boolean,
   images: [String]
 });

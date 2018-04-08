@@ -9,6 +9,7 @@ import AvailableDetails from './properties/AvailableDetails';
 import Application from './application/Application';
 import TenantHome from './tenants/TenantHome';
 import QueryForm from './QueryForm';
+import SubscribeForm from './SubscribeForm';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/property" component={Property} />
             <Route exact path="/property/:label" component={AvailableDetails}/>
             <Route exact path="/application" component={Application} />
+            <Route exact path="/subscribe" component={SubscribeForm}/>
             <Route exact path="/tenant" component={TenantHome} />
             <Route exact path="/contact" component={QueryForm}/>
           </div>
