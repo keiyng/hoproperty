@@ -6,7 +6,7 @@ export default ({input, label, type, meta: {error, touched}}) => {
         <div>
             <label>{label}</label>
             <input {...input} type={type} style={{marginBottom: "5px"}}/>
-            <div className="red-text" style={{marginBottom: "20px"}}>{touched && error}</div>
+            <div className="error" style={{marginBottom: "15px"}}>{touched && error}</div>
         </div>
     )
 }

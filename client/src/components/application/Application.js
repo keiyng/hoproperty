@@ -25,7 +25,7 @@ class Application extends Component {
     }
   
     render() {
-      return <div>{this.renderContent()}</div>;
+      return <div style={{textAlign: 'center'}}>{this.renderContent()}</div>;
     }
   }
   

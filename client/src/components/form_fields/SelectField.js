@@ -12,7 +12,6 @@ export default ({ input: { name }, label, options, meta: {touched, error}}) => {
   return (
     <div>
       <label>{label}</label>
-      <div className="red-text" style={{marginBottom: "20px"}}>{touched && error}</div>
       <Field
         key={name}
         type="select"
@@ -23,6 +22,7 @@ export default ({ input: { name }, label, options, meta: {touched, error}}) => {
         <option value="">Please Select</option>
         {renderOptions()}
       </Field>
+      <div className="error" style={{marginBottom: "15px"}}>{touched && error}</div>
     </div>
   );
 };

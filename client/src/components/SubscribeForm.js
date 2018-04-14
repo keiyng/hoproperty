@@ -107,10 +107,6 @@ let SubscribeForm = ({ formValues, subscribe, submitting, history }) => {
 
   return (
     <div>
-      <h3>
-        Subscribe and receive notifications when rentals are available in your
-        area
-      </h3>
       <form>{renderFields}</form>
       <button
         onClick={() => subscribe(formValues, history)}
@@ -132,7 +128,6 @@ function validate(values) {
       errors[name] = noValueError;
     }
   });
-  console.log('values:', values);
   return errors;
 }
 

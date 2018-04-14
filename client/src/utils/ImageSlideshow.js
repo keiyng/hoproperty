@@ -27,8 +27,8 @@ class SimpleSlider extends Component {
         var settings = {
           dots: true,
           infinite: true,
-          speed: 1500,
-          slidesToShow: 2,
+          speed: 1200,
+          slidesToShow: 1,
           slidesToScroll: 1
         };
         return (
@@ -42,3 +42,4 @@ class SimpleSlider extends Component {
 }
 
 export default SimpleSlider;
+

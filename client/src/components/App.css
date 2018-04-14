@@ -1,0 +1,55 @@
+* {
+    font-family: Verdana, sans-serif;
+    font-family: 'Lora', sans-serif
+}
+/* a {
+    color: #650014
+} */
+a:hover {
+    text-decoration: none
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+table tr {
+    border-bottom: 1px solid gray
+}
+label {
+    margin-right: 8px;
+}
+.navbar-brand {
+    font-family: 'Condiment', cursive;
+    font-size: 45px;
+}
+.btn-danger {
+    width: 200px;
+}
+.error {
+    color: #782927;
+}
+
+.outmostLayer {
+    background-image: url("https://drive.google.com/uc?export=view&id=1J6pf9gEjI7Mnc7cjee7F7h8Ea9T-uUzG");
+    background-repeat:no-repeat;
+    background-size:100% 160%;
+    background-attachment: fixed;
+    overflow-y: scroll;
+  }
+
+
+  .nav-item {
+      margin: 2px 10px;
+      padding: 5px;
+      border-radius: 5px;
+  }
+  .nav-link {
+      color: black
+  }
+  .nav-link:hover {
+    color: black
+  }

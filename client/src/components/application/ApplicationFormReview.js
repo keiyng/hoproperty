@@ -8,19 +8,22 @@ import * as actions from '../../actions';
 const ApplicationFormReview = ({ onCancel, formValues, submitApplication, history, submitting }) => {
   const reviewFields = _.map(applicationFields, ({ name, label }) => {
     return (
-      <div key={name}>
-        <label>{label}</label>
-        <div>{formValues[name]}</div>
+      <div key={name} style={{marginBottom: '10px'}}>
+        <label><u><strong>{label}</strong></u></label>
+        <div>{formValues[name] ? formValues[name] : 'none' }</div>
       </div>
     );
   });
 
   return (
-    <div>
-      <h5>Please confirm your entries</h5>
+    <div style={{marginTop: '10px'}}>
+      <h5 style={{marginBottom: '10px', textAlign: 'left'}}><em>Please confirm your entries: </em></h5>
+      <div style={{backgroundColor: '#fafafa', opacity: '0.85', paddingTop: '10px'}}>
       {reviewFields}
+      </div>
+      <div style={{paddingBottom: '25px'}}>
       <button
-        className="yellow darken-3 white-text btn-flat"
+        className='btn btn-secondary' style={{marginRight: '20px'}}
         onClick={onCancel}
       >
         Back
@@ -28,11 +31,12 @@ const ApplicationFormReview = ({ onCancel, formValues, submitApplication, histor
       <button
         onClick={() => submitApplication(formValues, history)}
         disabled={submitting}
-        className="green white-text btn-flat right"
+        className="btn btn-info"
       >
-        Send Application
-        <i className="material-icons right">email</i>
+        Submit Application
+        <span class="oi oi-envelope-closed" style={{marginLeft: '5px'}}></span>
       </button>
+      </div>
     </div>
   );
 };

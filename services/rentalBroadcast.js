@@ -8,7 +8,7 @@ const Property = mongoose.model('properties');
 const broadcastTemplate = require('./mailing/templates/broadcast');
 
 const broadcastRule = new schedule.RecurrenceRule();
-broadcastRule.second = 40;
+broadcastRule.second = 0;
 // broadcastRule.dayOfWeek = 5;
 
 brodcastAvailables = async () => {

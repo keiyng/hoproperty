@@ -9,13 +9,15 @@ import AvailableDetails from './properties/AvailableDetails';
 import Application from './application/Application';
 import TenantHome from './tenants/TenantHome';
 import QueryForm from './QueryForm';
-import SubscribeForm from './SubscribeForm';
+import SubscribeForm from './SubscribeForm'
+import UnsubscribeForm from './UnsubscribeForm'
+import './App.css'
 
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="outmostLayer container" style={{height: '700px'}}>
         <BrowserRouter>
           <div className="container">
             <Header />
@@ -23,15 +25,16 @@ class App extends Component {
             <Route exact path="/property" component={Property} />
             <Route exact path="/property/:label" component={AvailableDetails}/>
             <Route exact path="/application" component={Application} />
-            <Route exact path="/subscribe" component={SubscribeForm}/>
             <Route exact path="/tenant" component={TenantHome} />
             <Route exact path="/contact" component={QueryForm}/>
+            <Route exact path="/subscribe" component={SubscribeForm}/>
+            <Route exact path="/unsubscribe" component={UnsubscribeForm}/>
           </div>
         </BrowserRouter>
+        
       </div>
     );
   }
 }
-// actions are assigned to App as props
-// ** mapDispatchToProps
+
 export default connect(null, actions)(App);

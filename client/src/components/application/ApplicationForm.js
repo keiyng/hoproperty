@@ -7,6 +7,7 @@ import validateEmails from '../../utils/validateEmail';
 import {applicationFields} from '../form_fields/formFields';
 import TextField from '../form_fields/TextField';
 import SelectField from '../form_fields/SelectField';
+import TextareaField from '../form_fields/TextareaField';
 
 
 class ApplicationForm extends Component {
@@ -24,11 +25,21 @@ class ApplicationForm extends Component {
           >
           </Field>
         )
-      } else if (type !== 'select' && !optional) {
+      } else if (type !== 'select' && type !== 'textarea' && !optional) {
         return (
           <Field
             key={name}
             component={TextField}
+            type={type}
+            label={label}
+            name={name}
+          />
+        );
+      } else if (type === 'textarea') {
+        return (
+          <Field
+            key={name}
+            component={TextareaField}
             type={type}
             label={label}
             name={name}
@@ -70,25 +81,30 @@ class ApplicationForm extends Component {
 
     return (
       <div>
-        <h3>Rental Application</h3>
-        <p>We only accept online application. All fields are required.</p>
+        <div style={{marginTop: '10px'}}>
+        <h3 style={{fontWeight: 'bold'}}>Rental Application</h3>
+        <p><em>We only accept online application. All fields are required.</em></p>
+        </div>
+        <div style={{backgroundColor: '#fafafa', opacity: '0.85', paddingTop: '10px'}}>
         <form onSubmit={handleSubmit(onApplicationSubmit)}>
           {this.renderFields()}
           {this.props.coApplicant === "Yes" && this.renderOptionalFields()}
-          By submitting this application, I/We authorize Ho Property, LLC and/or a third party 
+          <p style={{padding: '0 40px', fontSize: 'smaller'}}><em>By submitting this application, I/We authorize Ho Property, LLC and/or a third party 
           to conduct an employment/credit check concerning my/our application and to verify all references. 
           I/We declare that all information listed on this application is true and accurate. 
-          I/We understand that unclear and/or false information on this application renders this application invalid.
-          <div>
-          <Link to="/" className="red btn-flat white-text">
+          I/We understand that unclear and/or false information on this application renders this application invalid.</em></p>
+          <div style={{paddingBottom: '25px'}}>
+          <button className='btn btn-secondary' style={{marginRight: '20px'}}><Link to="/" style={{color: '#fff'}}>
             Cancel
           </Link>
-          <button disabled={submitting} type="submit" className="teal btn-flat right white-text">
+          </button>
+          <button disabled={submitting} type="submit" className="btn btn-info">
             Next
-            <i className="material-icons right">done</i>
+            <span className="oi oi-arrow-thick-right" style={{marginLeft: '5px'}}></span>
           </button>
           </div>
         </form>
+        </div>
       </div>
     );
   }
@@ -100,8 +116,10 @@ function validate(values) {
   errors.email = validateEmails(values.email || '');
 
   _.each(applicationFields, ({ name, noValueError }) => {
-    if (!values[name]) {
+    if (!values[name] && noValueError !== '') {
       errors[name] = noValueError;
+    } else {
+      values[name] === 'none'
     }
   });
 

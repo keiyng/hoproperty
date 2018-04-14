@@ -1,15 +1,13 @@
 import React from 'react';
 import Available from './properties/Available';
-import SubscribeForm from './SubscribeForm';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2>Home</h2>
-      <Available />
-      <Link to="/application">Apply Now</Link>
-      <SubscribeForm />
+    <div style={{ textAlign: 'center'}}>
+        <h1 style={{marginTop: '20px', fontSize: '28px'}}>✦NOW LEASING✦</h1>
+        <button type="button" className="btn btn-danger"><strong><Link to="/application" style={{color: '#fff'}}>Apply Now</Link></strong></button>
+      <Available/>
     </div>
   );
 };

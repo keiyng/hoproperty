@@ -31,7 +31,7 @@ module.exports = (subscriber, availables) => {
                     ${dynamicTemplate}
                     <p>Check out more details and apply on https://hopropertyllc.com</p>
                   </div>
-                  <p><a href="https://localhost:5000/api/unsubscribe">Unsubsribe</a> if you do not wish to receive anymore updates from Ho Property, LLC</p>
+                  <p><a href="/api/unsubscribe">Unsubsribe</a> if you do not wish to receive anymore updates from Ho Property, LLC</p>
               </body>
           </html>
       `;
