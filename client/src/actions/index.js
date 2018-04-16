@@ -36,7 +36,7 @@ export const submitQuery = (values, history) => async dispatch => {
 
 export const subscribe = (values, history) => async dispatch => {
   const res = await axios.post('/api/subscribe', values);
-
+  history.push('/');
   dispatch({
     type: 'others',
     payload: res.data

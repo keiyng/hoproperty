@@ -34,7 +34,7 @@ const ApplicationFormReview = ({ onCancel, formValues, submitApplication, histor
         className="btn btn-info"
       >
         Submit Application
-        <span class="oi oi-envelope-closed" style={{marginLeft: '5px'}}></span>
+        <span className="oi oi-envelope-closed" style={{marginLeft: '5px'}}></span>
       </button>
       </div>
     </div>

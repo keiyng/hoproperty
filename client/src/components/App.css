@@ -15,7 +15,6 @@ a:hover {
 ::-webkit-scrollbar-track {
     display: none;
 }
-
 table tr {
     border-bottom: 1px solid gray
 }
@@ -31,6 +30,22 @@ label {
 }
 .error {
     color: #782927;
+}
+input, textarea, button {
+    outline: none
+}
+
+.details-container h6 {
+    background-color:#5BB7B7;
+    padding: 3px;
+    padding-left: 10px;
+     color: #fff;
+     width: 200px;
+    letter-spacing: 4px;
+}
+.subscribe-container input {
+    margin-right: 15px;
+    margin-left: -5px;
 }
 
 .outmostLayer {

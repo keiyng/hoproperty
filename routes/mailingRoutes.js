@@ -33,7 +33,7 @@ module.exports = app => {
     const mailOptions = {
       from: keys.emailFrom,
       to: keys.emailTo,
-      subject: 'Website Query',
+      subject: 'Website Contact',
       html: queryTemplate(query),
       replyTo: query.email
     };
@@ -41,11 +41,11 @@ module.exports = app => {
     mailer.transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         console.log(err);
+        return false;
       } else {
         console.log(`email sent! ${info.response}`);
+        res.redirect('/');
       }
     });
-
-    res.redirect('/');
   });
 };

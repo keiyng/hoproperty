@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Property = mongoose.model('properties');
 
 module.exports = app => {
+
   app.get('/api/property', async (req, res) => {
     const properties = await Property.find({}).select({
       block: false,

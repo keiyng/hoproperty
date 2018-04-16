@@ -10,6 +10,8 @@ const propertySchema = new Schema({
   bathroom: String,
   square_feet: String,
   type: String,
+  parking: String,
+  laundry: String,
   rent: String,
   images: [String],
   available: Boolean,

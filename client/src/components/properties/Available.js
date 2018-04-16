@@ -12,7 +12,7 @@ class Available extends Component {
     return this.props.properties.filter(property => property.available === true)
       .map(available => {
         return (
-          <div key={available.label} style={{float: 'left', marginTop: '20px', textAlign: 'left', marginBottom: '40px', marginRight: '24px'}}>
+          <div key={available.label} style={{float: 'left', marginTop: '20px', textAlign: 'left', marginBottom: '40px', marginRight: '22px', backgroundColor: '#fff', opacity: '0.9', padding: '5px', borderRadius: '3px', border: '1px solid gray'}}>
             <img
               width="250px"
               height="180px"
@@ -25,7 +25,7 @@ class Available extends Component {
             />
             <div><strong>${available.rent}</strong></div>
             <div style={{width: '200px'}}>{available.address}</div>
-            <button type="button" className="btn btn-info"><Link style={{width: '200px', color: '#fff'}} to={`/property/${available.label}`}>View Details</Link></button>
+            <button type="button" className="btn btn-info" style={{marginTop: '10px'}}><Link style={{width: '200px', color: '#fff'}} to={`/property/${available.label}`}>View Details</Link></button>
           </div>
         );
       });
@@ -33,7 +33,7 @@ class Available extends Component {
 
   render() {
     return (
-      <div style={{paddingLeft: '100px'}}>
+      <div style={{paddingLeft: '50px'}}>
         <div>{this.renderAvailable()}</div>
       </div>
     );

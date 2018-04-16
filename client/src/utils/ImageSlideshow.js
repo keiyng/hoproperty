@@ -4,12 +4,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import _ from 'lodash';
 
+function Arrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "white" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+
 class SimpleSlider extends Component {
     renderImages() {
         return _.map(this.props.images, image => {
             return (
                 <div key="images">
-                <img src={image} width="350px" height="250px" alt={this.props.label}></img>
+                <img src={image} width="300px" height="200px" alt={this.props.label}></img>
                 </div>
             )
         })
@@ -23,13 +35,14 @@ class SimpleSlider extends Component {
         //     return size;
         // };
         //  const size = Object.size(this.props.images);
-        
-        var settings = {
+        const settings = {
           dots: true,
           infinite: true,
           speed: 1200,
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          nextArrow: <Arrow />,
+          prevArrow: <Arrow />
         };
         return (
             <div style={{width: "65%"}}>

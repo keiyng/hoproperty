@@ -10,7 +10,7 @@ let UnsubscribeForm = ({ formValues, unsubscribe, submitting }) => {
   return (
     <div>
       <form>
-          Please enter your e-mail to finish the unsubscribe process:
+          Please enter your e-mail to unsubscribe:
           <div>
         <Field
           key="unsubscribe"
@@ -23,6 +23,8 @@ let UnsubscribeForm = ({ formValues, unsubscribe, submitting }) => {
       <button
         onClick={() => unsubscribe(formValues)}
         disabled={submitting}
+        className="btn btn-secondary"
+        style={{marginTop: '15px'}}
       >
         Unsubscribe
       </button>

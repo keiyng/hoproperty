@@ -34,12 +34,13 @@ let QueryForm = ({formValues, submitQuery, submitting, history}) => {
   });
 
   return (
-    <div>
+    <div style={{textAlign: 'center', paddingTop: '15px'}}>
       <h3>Contact Us</h3>
-      <p>P.O. Box 28, Cedar Grove, NJ 07009</p>
-      <p>Monday - Friday 9:00am to 5:00pm</p>
-      <form>{renderFields}</form>
-      <button onClick={() => submitQuery(formValues, history)} disabled={submitting}>Submit</button>
+      <p style={{fontSize: 'smaller'}}>P.O. Box 28, Cedar Grove, NJ 07009 <br />Monday - Friday 9:00am to 5:00pm</p>
+      <div>
+        <form>{renderFields}</form>
+        <button onClick={() => submitQuery(formValues, history)} disabled={submitting} className="btn btn-info">Send</button>
+      </div>
     </div>
   );
 };
@@ -68,8 +69,7 @@ QueryForm = connect(mapStateToProps, actions)(QueryForm);
 
 QueryForm = reduxForm({
   validate,
-  form: 'queryForm',
-  onSubmit: () => console.log("hihihihihihihihih")
+  form: 'queryForm'
 })(QueryForm);
 
 export default QueryForm;

@@ -13,82 +13,90 @@ let SubscribeForm = ({ formValues, subscribe, submitting, history }) => {
     ({ label, name, type, options }) => {
       if (type === 'checkbox') {
         return (
-          <div key={name}>
+          <div key={name} className="subscribe-container">
+          <p style={{fontWeight: 'bold'}}>Select the county you want to receive updates on: </p>
+          <label>{options[1]}</label>
             <Field
               name={options[1]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[1]}</label>
+            <label>{options[2]}</label>            
             <Field
               name={options[2]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[2]}</label>
+            <label>{options[3]}</label>
             <Field
               name={options[3]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[3]}</label>
+            <label>{options[4]}</label>
             <Field
               name={options[4]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[4]}</label>
+            <label>{options[5]}</label>
             <Field
               name={options[5]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[5]}</label>
+            <label>{options[6]}</label>
             <Field
               name={options[6]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[6]}</label>
+            <br />            
+            <label>{options[7]}</label>
             <Field
               name={options[7]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[7]}</label>
+            <label>{options[8]}</label>
             <Field
               name={options[8]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[8]}</label>
+            <label>{options[9]}</label>
             <Field
               name={options[9]}
               component="input"
               type={type}
               label={label}
             />
-            <label>{options[9]}</label>
+            <label>{options[10]}</label>
             <Field
               name={options[10]}
               component="input"
               type={type}
             />
-            <label>{options[10]}</label>
+            <label>{options[11]}</label>
             <Field
               name={options[11]}
               component="input"
               type={type}
             />
-            <label>{options[11]}</label>
+            <label>{options[12]}</label>
+            <Field
+              name={options[12]}
+              component="input"
+              type={type}
+            />
           </div>
         );
       } else {
@@ -106,14 +114,19 @@ let SubscribeForm = ({ formValues, subscribe, submitting, history }) => {
   );
 
   return (
-    <div>
+    <div style={{textAlign: 'center', paddingTop: '20px'}}>
+      <p style={{textAlign: 'left', marginBottom: '20px'}}> We send out e-mail notification when rentals are available in your area. <br />
+      Subscribe now and be the first to apply for your future home.</p>
+      <div style={{backgroundColor: '#fafafa', opacity: '0.85', padding: '10px'}}>
       <form>{renderFields}</form>
       <button
         onClick={() => subscribe(formValues, history)}
         disabled={submitting}
+        className="btn btn-info"
       >
         Subscribe
       </button>
+      </div>
     </div>
   );
 };

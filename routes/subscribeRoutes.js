@@ -21,7 +21,8 @@ module.exports = app => {
       email: subscriber.email
     });
     if (existingSubscriber) {
-      res.redirect('/');
+      res.send('This email address has already been registered')
+      console.log('existed')
     } else {
       const newSubscriber = await new Subscriber(subscriber).save();
       res.redirect('/');

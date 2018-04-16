@@ -189,7 +189,7 @@ export const subscribeFields = [
     label: 'Please select the counties you wish to receive notifications about',
     name: 'county',
     type: 'checkbox',
-    options: ['Bergen', 'Essex', 'Gloucester', 'Hudson', 'Mercer', 'Middlessex', 'Monmouth', 'Morris', 'Passaic', 'Sussex', 'Union', 'Warren'],
+    options: ['Bergen', 'Essex', 'Gloucester', 'Hudson', 'Mercer', 'Middlessex', 'Monmouth', 'Morris', 'Passaic', 'Somesret', 'Sussex', 'Union', 'Warren'],
     noValueError: 'Please at least select one county of interest'
   },
 
