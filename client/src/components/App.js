@@ -10,7 +10,9 @@ import Application from './application/Application';
 import QueryForm from './QueryForm';
 import SubscribeForm from './SubscribeForm'
 import UnsubscribeForm from './UnsubscribeForm'
-import './App.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './App.css';
 
 
 class App extends Component {
