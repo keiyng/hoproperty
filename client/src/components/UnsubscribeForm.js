@@ -5,7 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import validateEmails from '../utils/validateEmail';
 import * as actions from '../actions';
 
-let UnsubscribeForm = ({ formValues, message, unsubscribe, submitting }) => {
+let UnsubscribeForm = ({ formValues, message, unsubscribe}) => {
 
   return (
     <div>
@@ -24,7 +24,6 @@ let UnsubscribeForm = ({ formValues, message, unsubscribe, submitting }) => {
       {message.success && <div style={{color: '#000', marginBottom: '10px', fontWeight: 'bold'}}>{message.success}</div>}
       <button
         onClick={() => unsubscribe(formValues)}
-        disabled={submitting}
         className="btn btn-secondary"
         style={{marginTop: '15px'}}
       >

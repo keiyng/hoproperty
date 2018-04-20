@@ -7,7 +7,7 @@ import { subscribeFields } from './form_fields/formFields';
 import TextField from './form_fields/TextField';
 import * as actions from '../actions';
 
-let UpdatePreferenceForm = ({ formValues, message, updatePreference, submitting }) => {
+let UpdatePreferenceForm = ({ formValues, message, updatePreference}) => {
 
   const renderFields = _.map(
     subscribeFields,
@@ -117,7 +117,6 @@ let UpdatePreferenceForm = ({ formValues, message, updatePreference, submitting 
       </form>
       <button
         onClick={() => updatePreference(formValues)}
-        disabled={submitting}
         className="btn btn-info"
         style={{marginTop: '15px'}}
       >

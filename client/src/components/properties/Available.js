@@ -9,8 +9,8 @@ class Available extends Component {
   }
 
   renderAvailable() {
-    return this.props.properties.filter(property => property.available === true)
-      .map(available => {
+    let properties = Array.from(this.props.properties)
+    return properties.filter(property => property.available === true).map(available => {
         return (
           <div key={available.label} style={{float: 'left', marginTop: '20px', textAlign: 'left', marginBottom: '40px', marginRight: '22px', backgroundColor: '#fff', opacity: '0.9', padding: '5px', borderRadius: '3px', border: '1px solid gray'}}>
             <img
@@ -25,7 +25,7 @@ class Available extends Component {
             />
             <div><strong>${available.rent}</strong></div>
             <div style={{width: '200px'}}>{available.address}</div>
-            <button type="button" className="btn btn-info" style={{marginTop: '10px'}}><Link style={{width: '200px', color: '#fff'}} to={`/property/${available.label}`}>View Details</Link></button>
+<Link className="btn btn-info" style={{width: '200px', color: '#fff', marginTop: '10px'}} to={`/property/${available.label}`}>View Details</Link>
           </div>
         );
       });

@@ -15,7 +15,8 @@ class PropertySearch extends Component {
   }
 
   renderSearchProperties() {
-    return this.props.properties.filter(search => this.state.input === '' || search.address.toLowerCase().includes(this.state.input.toLowerCase()) || search.county.toLowerCase().includes(this.state.input.toLowerCase())).map(res => {
+    let properties = Array.from(this.props.properties)
+    return properties.filter(search => this.state.input === '' || search.address.toLowerCase().includes(this.state.input.toLowerCase()) || search.county.toLowerCase().includes(this.state.input.toLowerCase())).map(res => {
       return (
         <tr key={res.label}>
         <td>{res.address}</td>

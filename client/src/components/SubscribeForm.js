@@ -7,7 +7,7 @@ import { subscribeFields } from './form_fields/formFields';
 import TextField from './form_fields/TextField';
 import * as actions from '../actions';
 
-let SubscribeForm = ({ formValues, message, subscribe, submitting, history }) => {
+let SubscribeForm = ({ formValues, message, subscribe, history }) => {
 
   const renderFields = _.map(
     subscribeFields,
@@ -123,7 +123,6 @@ let SubscribeForm = ({ formValues, message, subscribe, submitting, history }) =>
       <form>{renderFields}</form>
       <button
         onClick={() => subscribe(formValues, history)}
-        disabled={submitting}
         className="btn btn-info"
       >
         Subscribe

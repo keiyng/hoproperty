@@ -38,16 +38,16 @@ class AvailableDetails extends Component {
             <div>{property.township_borough}</div>
           </div>
           <div style={{clear: 'left'}}>
-          <button className="btn btn-danger" style={{ marginTop: '25px', marginRight: '15px' }}>
-            <Link to="/application" style={{ color: '#fff' }}>
+
+            <Link to="/application" className="btn btn-danger" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
               Apply Now
             </Link>
-          </button>
-          <button className="btn btn-secondary" style={{ marginTop: '25px', marginRight: '15px' }}>
-            <Link to="/" style={{ color: '#fff' }}>
+
+
+            <Link to="/" className="btn btn-secondary" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
               Back
             </Link>
-          </button>
+
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ label {
 .error {
     color: #782927;
 }
-input, textarea, button {
+input, textarea, button, div, select, .btn {
     outline: none
 }
 

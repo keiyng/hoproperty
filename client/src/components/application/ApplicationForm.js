@@ -94,10 +94,10 @@ class ApplicationForm extends Component {
           I/We declare that all information listed on this application is true and accurate. 
           I/We understand that unclear and/or false information on this application renders this application invalid.</em></p>
           <div style={{paddingBottom: '25px'}}>
-          <button className='btn btn-secondary' style={{marginRight: '20px'}}><Link to="/" style={{color: '#fff'}}>
+         <Link to="/" className='btn btn-secondary' style={{color: '#fff', marginRight: '20px'}}>
             Cancel
           </Link>
-          </button>
+
           <button disabled={submitting} type="submit" className="btn btn-info">
             Next
             <span className="oi oi-arrow-thick-right" style={{marginLeft: '5px'}}></span>
