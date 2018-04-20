@@ -8,7 +8,7 @@ import TextField from './form_fields/TextField';
 import TextareaField from './form_fields/TextareaField';
 import * as actions from '../actions';
 
-let QueryForm = ({formValues, submitQuery, submitting, history}) => {
+let QueryForm = ({formValues, submitQuery, message, submitting, history}) => {
   const renderFields = _.map(queryFields, ({ label, name, type }) => {
     if (type === 'textarea') {
       return (
@@ -40,6 +40,8 @@ let QueryForm = ({formValues, submitQuery, submitting, history}) => {
       <div>
         <form>{renderFields}</form>
         <button onClick={() => submitQuery(formValues, history)} disabled={submitting} className="btn btn-info">Send</button>
+        {message.error && <div style={{color: 'red', marginBottom: '10px'}}>{message.error}</div>}
+        {message.success && <div style={{color: '#000', marginBottom: '10px', fontWeight: 'bold'}}>{message.success}</div>}
       </div>
     </div>
   );
@@ -61,7 +63,8 @@ function validate(values) {
 
 function mapStateToProps(state) {
   return {
-    formValues: state.form.queryForm.values
+    formValues: state.form.queryForm.values,
+    message: state.message
   };
 }
 

@@ -7,7 +7,7 @@ import { subscribeFields } from './form_fields/formFields';
 import TextField from './form_fields/TextField';
 import * as actions from '../actions';
 
-let SubscribeForm = ({ formValues, message, subscribe, submitting, history }) => {
+let UpdatePreferenceForm = ({ formValues, message, updatePreference, submitting }) => {
 
   const renderFields = _.map(
     subscribeFields,
@@ -15,7 +15,7 @@ let SubscribeForm = ({ formValues, message, subscribe, submitting, history }) =>
       if (type === 'checkbox') {
         return (
           <div key={name} className="subscribe-container">
-          <p style={{fontWeight: 'bold'}}>Select the county you want to receive updates on: </p>
+          <p style={{fontWeight: 'bold'}}>Re-select your preferences: </p>
           <label>{options[1]}</label>
             <Field
               name={options[1]}
@@ -100,37 +100,31 @@ let SubscribeForm = ({ formValues, message, subscribe, submitting, history }) =>
             />
           </div>
         );
-      } else {
-        return (
-          <Field
-            key={name}
-            component={TextField}
-            type={type}
-            label={label}
-            name={name}
-          />
-        );
       }
     }
   );
 
   return (
-
-    <div style={{textAlign: 'center', paddingTop: '20px'}}>
-      <p style={{textAlign: 'left', marginBottom: '20px'}}> We send out e-mail notification when rentals are available in your area. <br />
-      Subscribe now and be the first to apply for your future home.</p>
-      <div style={{backgroundColor: '#fafafa', opacity: '0.85', padding: '10px'}}>
-      <form>{renderFields}</form>
+    <div style={{textAlign: 'center', padding: '15px', backgroundColor: '#fafafa', opacity: '0.85'}}>
+      <form>
+        <Field
+          component={TextField}
+          type="email"
+          name="email"
+          label="Email:"
+        />
+        {renderFields}
+      </form>
       <button
-        onClick={() => subscribe(formValues, history)}
+        onClick={() => updatePreference(formValues)}
         disabled={submitting}
         className="btn btn-info"
+        style={{marginTop: '15px'}}
       >
-        Subscribe
+        Update
       </button>
       {message.error && <div style={{color: 'red'}}>{message.error}</div>}
       {message.success && <div style={{color: 'green'}}>{message.success}</div>}
-      </div>
     </div>
   );
 };
@@ -140,28 +134,21 @@ function validate(values) {
 
   errors.email = validateEmails(values.email || '');
 
-  _.each(subscribeFields, ({ name, noValueError }) => {
-
-    if (!values[name]) {
-      errors[name] = noValueError;
-    }
-  });
   return errors;
 }
 
 function mapStateToProps(state) {
-console.log(state)
   return {
-    formValues: state.form.subscribeForm.values,
+    formValues: state.form.updatePreferenceForm.values,
     message: state.message
   };
 }
 
-SubscribeForm = connect(mapStateToProps, actions)(SubscribeForm);
+UpdatePreferenceForm = connect(mapStateToProps, actions)(UpdatePreferenceForm);
 
-SubscribeForm = reduxForm({
+UpdatePreferenceForm = reduxForm({
   validate,
-  form: 'subscribeForm'
-})(SubscribeForm);
+  form: 'updatePreferenceForm',
+})(UpdatePreferenceForm);
 
-export default SubscribeForm;
+export default UpdatePreferenceForm;

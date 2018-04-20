@@ -19,12 +19,12 @@ module.exports = app => {
 
     mailer.transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        console.log(err);
+        res.json({error: 'We couldn\'t submit your application. Please try again'})
       } else {
         console.log(`email sent! ${info.response}`);
+        res.json({success: 'Your application has been submitted successfully. We will contact you if it matches our requirement.'})
       }
     });
-    res.redirect('/');
   });
 
   app.post('/api/query', (req, res) => {
@@ -40,11 +40,10 @@ module.exports = app => {
 
     mailer.transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        console.log(err);
-        return false;
+        res.json({error: 'We couldn\'t submit your message. Please try again'})
       } else {
         console.log(`email sent! ${info.response}`);
-        res.redirect('/');
+        res.json({success: 'Your message has been submitted successfully. We will reply as soon as possible.'})
       }
     });
   });

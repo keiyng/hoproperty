@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_PROPERTIES, FETCH_AVAILABLE_DETAILS } from './types';
+import { FETCH_PROPERTIES, FETCH_AVAILABLE_DETAILS, FETCH_MESSAGE } from './types';
 
 export const fetchProperties = () => async dispatch => {
   const res = await axios.get('/api/property');
@@ -16,38 +16,45 @@ export const fetchAvailableDetails = label => async dispatch => {
 export const submitApplication = (values, history) => async dispatch => {
   const res = await axios.post('/api/application', values);
 
-  history.push('/');
-
   dispatch({
-    // create an reducer for signed up users
-    type: 'others',
+    type: FETCH_MESSAGE,
     payload: res.data
   });
 };
 
 export const submitQuery = (values, history) => async dispatch => {
   const res = await axios.post('/api/query', values);
-  history.push('/');
+
   dispatch({
-    type: 'others',
+    type: FETCH_MESSAGE,
     payload: res.data
   });
 };
 
 export const subscribe = (values, history) => async dispatch => {
-  const res = await axios.post('/api/subscribe', values);
-  history.push('/');
+  const res = await axios.post('/api/subscribe', values)
+
   dispatch({
-    type: 'others',
+    type: FETCH_MESSAGE,
     payload: res.data
   });
 }
 
+export const updatePreference = (values, history) => async dispatch => {
+    const res = await axios.patch('/api/update_preference', values);
+
+    dispatch({
+      type: FETCH_MESSAGE,
+      payload: res.data
+    });
+}
+
+
 export const unsubscribe = (values) => async dispatch => {
-  const res = await axios.post('/api/unsubscribe', values);
+  const res = await axios.delete(`/api/unsubscribe/${values.email}`, values);
 
   dispatch({
-    type: 'others',
+    type: FETCH_MESSAGE,
     payload: res.data
   });
 }

@@ -5,7 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import validateEmails from '../utils/validateEmail';
 import * as actions from '../actions';
 
-let UnsubscribeForm = ({ formValues, unsubscribe, submitting }) => {
+let UnsubscribeForm = ({ formValues, message, unsubscribe, submitting }) => {
 
   return (
     <div>
@@ -20,6 +20,8 @@ let UnsubscribeForm = ({ formValues, unsubscribe, submitting }) => {
         />
         </div>
       </form>
+      {message.error && <div style={{color: 'red', marginBottom: '10px'}}>{message.error}</div>}
+      {message.success && <div style={{color: '#000', marginBottom: '10px', fontWeight: 'bold'}}>{message.success}</div>}
       <button
         onClick={() => unsubscribe(formValues)}
         disabled={submitting}
@@ -42,7 +44,8 @@ function validate(values) {
 
 function mapStateToProps(state) {
   return {
-    formValues: state.form.unsubscribeForm.values
+    formValues: state.form.unsubscribeForm.values,
+    message: state.message
   };
 }
 

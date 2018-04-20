@@ -11,7 +11,6 @@ class Home extends Component {
   render() {
     return (
       <div style={{ textAlign: 'center'}}>
-          {this.props.history.action === 'PUSH' && <div style={{color: '#46A346', margigBottom: '10px', fontSize: '1.3em'}}>Your form has been sent. Thank you!</div>}
           <h1 style={{marginTop: '20px', fontSize: '28px'}}>✦NOW LEASING✦</h1>
           <button type="button" className="btn btn-danger"><strong><Link to="/application" style={{color: '#fff'}}>Apply Now</Link></strong></button>
         <Available/>

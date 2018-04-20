@@ -8,8 +8,9 @@ import Property from './properties/Property';
 import AvailableDetails from './properties/AvailableDetails';
 import Application from './application/Application';
 import QueryForm from './QueryForm';
-import SubscribeForm from './SubscribeForm'
-import UnsubscribeForm from './UnsubscribeForm'
+import SubscribeForm from './SubscribeForm';
+import UnsubscribeForm from './UnsubscribeForm';
+import UpdatePreferenceForm from './UpdatePreferenceForm'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './App.css';
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/application" component={Application} />
             <Route exact path="/contact" component={QueryForm}/>
             <Route exact path="/subscribe" component={SubscribeForm}/>
+            <Route exact path="/update_preference" component={UpdatePreferenceForm}/>
             <Route exact path="/unsubscribe" component={UnsubscribeForm}/>
           </div>
         </BrowserRouter>

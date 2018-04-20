@@ -129,7 +129,7 @@ function validate(values) {
 ApplicationForm = reduxForm({
   validate,
   form: 'applicationForm',
-  destroyOnUnmount: false
+  destroyOnUnmount: false,
 })(ApplicationForm);
 
 const selector = formValueSelector('applicationForm')
