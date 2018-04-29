@@ -43,9 +43,12 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script>
-   document.addEventListener('touchmove', function (event) {
+    $(this).on('touchmove', function (event) {
       if (event.originalEvent.scale !== 1) {
         event.preventDefault();
         event.stopPropagation();
