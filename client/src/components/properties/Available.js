@@ -4,11 +4,13 @@ import { fetchProperties } from '../../actions';
 import { Link } from 'react-router-dom';
 
 class Available extends Component {
+
   componentDidMount() {
     this.props.fetchProperties();
   }
 
   renderAvailable() {
+    // {loading && <h1>LOADING</h1>}
     let properties = Array.from(this.props.properties)
     return properties.filter(property => property.available === true).map(available => {
         return (

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <meta name="description" content="Ho Property, LLC is a property management company specializes in residential rentals in New Jersey. Primarily serving North and Central Jersey area.">
+    <meta name="author" content="Kei Yin Ng">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -39,5 +41,13 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      $(this).on('touchmove', function (event) {
+        if (event.originalEvent.scale !== 1) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        });
+      </script>
   </body>
 </html>
