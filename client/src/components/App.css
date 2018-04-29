@@ -54,6 +54,7 @@ input, textarea, button, div, select, .btn {
     background-size:100% 160%;
     background-attachment: fixed;
     overflow-y: scroll;
+
   }
   .slick-prev:before,
 .slick-next:before {

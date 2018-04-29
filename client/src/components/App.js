@@ -19,7 +19,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="outmostLayer container" style={{height: '700px'}}>
+      <div className="outmostLayer container" style={{height: '800px'}}>
         <BrowserRouter>
           <div className="container">
             <Header />
