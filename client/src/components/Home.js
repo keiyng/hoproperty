@@ -13,7 +13,7 @@ class Home extends Component {
       <div style={{ textAlign: 'center'}}>
           <h1 style={{marginTop: '20px', fontSize: '28px'}}>✦NOW LEASING✦</h1>
           <strong><Link to="/application" className="btn btn-danger" style={{color: '#fff'}}>Apply Now</Link></strong>
-        <Available/>
+        <Available />
       </div>
     );
   }

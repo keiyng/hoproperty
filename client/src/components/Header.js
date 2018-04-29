@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <nav
-        style={{ borderBottom: '1px solid gray', backgroundColor: '#ffffff' }}
+      <nav style={{borderBottom: '1px solid gray', backgroundColor: '#ffffff'}}
         className="navbar sticky-top navbar-expand-lg navbar-light"
       >
         <a className="navbar-brand" href="/">
