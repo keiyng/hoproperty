@@ -9,7 +9,6 @@ class Available extends Component {
   }
 
   renderAvailable() {
-    // {loading && <h1>LOADING</h1>}
     let properties = Array.from(this.props.properties);
     return properties
       .filter(property => property.available === true)

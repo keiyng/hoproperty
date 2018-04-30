@@ -42,7 +42,7 @@ class PropertySearch extends Component {
           You can use the search option below to filter our peoperties list.
           Investors please feel free to <Link to='/contact'>contact us</Link> to discuss your offer.
         </p>
-        <input value={this.state.input} type="text" onChange={this.onChangeHandler.bind(this)} placeholder='search city, zip or county' size="40" style={{border: '4px double gray', outline: 'none'}}/>
+        <input value={this.state.input} type="text" onChange={this.onChangeHandler.bind(this)} placeholder='search city, zip or county' size="40" style={{border: '4px double gray', outline: 'none', width: '220px'}}/>
         <table cellPadding='10px' style={{backgroundColor: '#fff', opacity: '0.85', marginBottom: '20px', fontSize: 'smaller'}}>
         <thead>
         {this.renderSearchProperties().length !== 0 &&

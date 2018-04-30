@@ -125,12 +125,17 @@ select,
   }
 
 .sliderContainer {
-    width: 400px;
+    width: 450px;
     margin: 0 auto;
 }
 
 .propertyIntro {
     width: 500px;
+}
+@media (max-width: 1000px) {
+    .availableDetailsContainer > div{
+        padding-left: 30px
+    }
 }
 
 @media (max-width: 767px) {
@@ -153,6 +158,9 @@ select,
   table {
     width: 80%;
   }
+  body {
+    overflow-y: scroll;
+}
 }
 
 @media (max-width: 500px) {
