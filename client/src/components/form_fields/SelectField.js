@@ -14,6 +14,7 @@ export default ({ input: { name }, label, options, meta: {touched, error}}) => {
       <label>{label}</label>
       <Field
         key={name}
+        className="select"
         type="select"
         label={label}
         name={name}

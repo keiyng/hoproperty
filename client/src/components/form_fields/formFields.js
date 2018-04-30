@@ -8,7 +8,7 @@ function fetchAvailableList() {
         return property.available === true;
       })
       .forEach(function(available) {
-        list.push(available.address);
+        list.push(available.address.slice(0, 30) + '...');
       });
   });
   return list;

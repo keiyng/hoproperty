@@ -28,13 +28,13 @@ class Available extends Component {
               }
               alt={available.label}
             />
-            <div>
+            <div style={{fontSize: '1.1em'}}>
               <strong>${available.rent}</strong>
             </div>
             <div style={{ width: '200px' }}>{available.address}</div>
             <Link
               className="btn btn-info"
-              style={{ width: '200px', color: '#fff', marginTop: '10px' }}
+              style={{ width: '250px', color: '#fff', marginTop: '10px' }}
               to={`/property/${available.label}`}
             >
               View Details

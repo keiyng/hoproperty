@@ -34,7 +34,7 @@ class App extends Component {
             <Route exact path="/unsubscribe" component={UnsubscribeForm}/>
           </div>
         </BrowserRouter>
-        <footer style={{textAlign: 'right', marginBottom: '10px'}}>Copyright © Ho Property, LLC {d.getFullYear()}</footer>
+        <footer style={{textAlign: 'center', marginBottom: '10px', clear: 'both'}}>Copyright © Ho Property, LLC {d.getFullYear()}</footer>
       </div>
     );
   }

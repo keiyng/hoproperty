@@ -18,6 +18,7 @@ class ApplicationForm extends Component {
           <Field
             key={name}
             type="select"
+            className="select"
             label={label}
             name={name}
             options={options}
@@ -54,6 +55,7 @@ class ApplicationForm extends Component {
         return (
           <Field
             key={name}
+            className="select"
             type="select"
             label={label}
             name={name}

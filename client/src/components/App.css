@@ -2,9 +2,7 @@
   font-family: Verdana, sans-serif;
   font-family: 'Lora', sans-serif;
 }
-/* a {
-    color: #650014
-} */
+
 a:hover {
   text-decoration: none;
 }
@@ -106,11 +104,12 @@ select,
     height: 900px;
     width: 800px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .availableDetailsContainer > div{
     background-color:#fff;
-    opacity: .85;
+    opacity: .90;
     padding-bottom: 10px;
     padding-left: 50px
 }
@@ -123,6 +122,10 @@ select,
     width: 200px;
     letter-spacing: 4px;
   }
+
+.select {
+    color: red;
+}
 
 .sliderContainer {
     width: 450px;
@@ -187,7 +190,7 @@ textarea {
 
 @media (max-width: 400px) {
   .availableContainer {
-    padding-left: 10%;
+    padding-left: 6%;
   }
 }
 

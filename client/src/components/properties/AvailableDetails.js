@@ -19,13 +19,13 @@ class AvailableDetails extends Component {
         </div>
         <div className="detailsContainer" style={{ marginTop: '40px'}}>
         <h5 style={{marginBottom: '20px'}}>{property.address}</h5>
-          <div style={{float: 'left', marginRight: '10px'}}>
+          <div style={{float: 'left', margin: '10px'}}>
             <h6>Rent &amp; Fees</h6>
             <div>${property.rent}/month</div>
             <div>1.5 month security deposit</div>
             <div>Tenant pays for all utilities</div>
           </div>
-          <div style={{float: 'left', marginRight: '10px' }}>
+          <div style={{float: 'left', margin: '10px' }}>
             <h6>Features</h6>
             <div>{property.type}</div>
             <div>{property.bedroom} bedrooms</div>
@@ -34,7 +34,7 @@ class AvailableDetails extends Component {
             <div>{property.laundry}</div>
             <div>{property.parking} parking</div>
           </div>
-          <div style={{float: 'left', marginRight: '10px' }}>
+          <div style={{float: 'left', margin: '10px' }}>
             <h6>Location</h6>
             <div>{property.county} county</div>
             <div>{property.township_borough}</div>
