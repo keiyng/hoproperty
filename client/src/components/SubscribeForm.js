@@ -116,7 +116,7 @@ let SubscribeForm = ({ formValues, message, subscribe, history }) => {
 
   return (
 
-    <div style={{textAlign: 'center', paddingTop: '20px'}}>
+    <div style={{textAlign: 'center', paddingTop: '20px', height: '900px'}}>
       <p style={{textAlign: 'left', marginBottom: '20px'}}> We send out e-mail notification when rentals are available in your area. <br />
       Subscribe now and be the first to apply for your future home.</p>
       <div style={{backgroundColor: '#fafafa', opacity: '0.85', padding: '10px'}}>

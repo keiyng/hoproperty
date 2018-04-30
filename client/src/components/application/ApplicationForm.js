@@ -81,7 +81,7 @@ class ApplicationForm extends Component {
 
     return (
       <div>
-        <div style={{marginTop: '10px'}}>
+        <div style={{textAlign: 'center', marginTop: '10px'}}>
         <h3 style={{fontWeight: 'bold'}}>Rental Application</h3>
         <p><em>We only accept online application. All fields are required.</em></p>
         </div>

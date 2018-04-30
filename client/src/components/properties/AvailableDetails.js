@@ -12,11 +12,13 @@ class AvailableDetails extends Component {
     const property = this.props.properties;
     const images = property.images;
     return (
-      <div style={{ paddingTop: '20px' }}>
-        <h5 style={{marginBottom: '20px'}}>{property.address}</h5>
+      <div className="availableDetailsContainer">
+      <div>
+        <div className="sliderContainer">
         <SimpleSlider images={images} />
-
-        <div  className="details-container" style={{ marginTop: '40px'}}>
+        </div>
+        <div className="detailsContainer" style={{ marginTop: '40px'}}>
+        <h5 style={{marginBottom: '20px'}}>{property.address}</h5>
           <div style={{float: 'left', marginRight: '10px'}}>
             <h6>Rent &amp; Fees</h6>
             <div>${property.rent}/month</div>
@@ -37,7 +39,7 @@ class AvailableDetails extends Component {
             <div>{property.county} county</div>
             <div>{property.township_borough}</div>
           </div>
-          <div style={{clear: 'left'}}>
+          <div style={{clear: 'left', width: '400px', margin: '0 auto'}}>
 
             <Link to="/application" className="btn btn-danger" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
               Apply Now
@@ -47,7 +49,7 @@ class AvailableDetails extends Component {
             <Link to="/" className="btn btn-secondary" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
               Back
             </Link>
-
+            </div>
           </div>
         </div>
       </div>

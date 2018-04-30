@@ -21,9 +21,8 @@ class PropertySearch extends Component {
         <tr key={res.label}>
         <td>{res.address}</td>
         <td>{res.county}</td>
-        <td>{res.type}</td>
         <td>{res.bedroom}</td>
-        {this.state.input !== '' && <td>{res.available ? <Link to={`/property/${res.label}`}>available for rent</Link> : <Link to="/contact">ask us</Link>}</td>}
+        <td>{res.available ? <Link to={`/property/${res.label}`}>available for rent</Link> : <Link to="/contact">ask us</Link>}</td>
         </tr>
       )
     })
@@ -38,7 +37,7 @@ class PropertySearch extends Component {
   render() {
     return (
       <div style={{paddingTop: '20px'}}>
-        <p style={{width: '600px'}}>
+        <p className="propertyIntro">
           Ho Property, LLC owns over 100 residential properties in New Jersey.
           You can use the search option below to filter our peoperties list.
           Investors please feel free to <Link to='/contact'>contact us</Link> to discuss your offer.
@@ -50,14 +49,13 @@ class PropertySearch extends Component {
           <tr>
             <th>Address</th>
             <th>County</th>
-            <th>Property Type</th>
             <th>Bedrooms</th>
-            {this.state.input !== '' && <th>Availability</th>}
+            <th>Availability</th>
           </tr>}
           </thead>
-            <tbody>
+            {this.renderSearchProperties().length !== 0 && <tbody>
             {this.renderSearchProperties()}
-            </tbody>
+            </tbody>}
         </table>
         {this.renderSearchProperties().length === 0 && <div>No matches.</div>}
         </div>

@@ -47,15 +47,6 @@ select,
   outline: none;
 }
 
-.details-container h6 {
-  background-color: #5bb7b7;
-  padding: 3px;
-  padding-left: 10px;
-  color: #fff;
-  width: 200px;
-  letter-spacing: 4px;
-}
-
 .subscribe-container input {
   margin-right: 15px;
   margin-left: -5px;
@@ -94,11 +85,109 @@ select,
 }
 
 .availableContainer {
-    padding-left: 100px;
+  padding-left: 10%;
+}
+
+.availableBlock {
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-right: 5%;
+  text-align: left;
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid gray;
+}
+
+.availableDetailsContainer {
+    padding-top: 20px;
+    height: 900px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.availableDetailsContainer > div{
+    background-color:#fff;
+    opacity: .85;
+    padding-bottom: 10px;
+    padding-left: 50px
+}
+
+.detailsContainer h6 {
+    background-color: #5bb7b7;
+    padding: 3px;
+    padding-left: 10px;
+    color: #fff;
+    width: 200px;
+    letter-spacing: 4px;
+  }
+
+.sliderContainer {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.propertyIntro {
+    width: 500px;
+}
+
+@media (max-width: 767px) {
+  .outmostLayer {
+    background-image: none;
+  }
+  .availableContainer {
+    padding-left: 15%;
+  }
+  .availableDetailsContainer {
+    width: 600px;
+    margin: 0 auto;
+}
+.availableDetailsContainer > div{
+    padding-left: 30px
+}
+  .availableBlock {
+    margin-right: 0;
+  }
+  table {
+    width: 80%;
+  }
 }
 
 @media (max-width: 500px) {
-    .availableContainer {
-        padding-left: 10px;
-    }
+  table {
+    width: 35%;
+  }
+  .propertyIntro {
+    width: 300px;
+}
+.availableDetailsContainer {
+    width: 100%;
+}
+textarea {
+    width: 85%;
+}
+.sliderContainer {
+    width: 100%;
+}
+.availableDetailsContainer > div{
+    padding-left: 0
+}
+
+}
+
+@media (max-width: 400px) {
+  .availableContainer {
+    padding-left: 10%;
+  }
+}
+
+@media (max-width: 350px) {
+  .availableContainer {
+    padding-left: 0;
+  }
+  .availableDetailsContainer {
+    width: 100%;
+}
 }

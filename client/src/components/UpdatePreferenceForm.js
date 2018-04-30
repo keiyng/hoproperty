@@ -105,7 +105,8 @@ let UpdatePreferenceForm = ({ formValues, message, updatePreference}) => {
   );
 
   return (
-    <div style={{textAlign: 'center', padding: '15px', backgroundColor: '#fafafa', opacity: '0.85'}}>
+    <div style={{height: '900px'}}>
+      <div style={{textAlign: 'center', padding: '15px', backgroundColor: '#fafafa', opacity: '0.85'}}>
       <form>
         <Field
           component={TextField}
@@ -124,6 +125,7 @@ let UpdatePreferenceForm = ({ formValues, message, updatePreference}) => {
       </button>
       {message.error && <div style={{color: 'red'}}>{message.error}</div>}
       {message.success && <div style={{color: 'green'}}>{message.success}</div>}
+      </div>
     </div>
   );
 };

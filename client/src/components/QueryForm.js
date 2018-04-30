@@ -34,7 +34,7 @@ let QueryForm = ({formValues, submitQuery, message, history}) => {
   });
 
   return (
-    <div style={{textAlign: 'center', paddingTop: '15px'}}>
+    <div style={{textAlign: 'center', paddingTop: '15px', height: '900px'}}>
       <h3>Contact Us</h3>
       <p style={{fontSize: 'smaller'}}>P.O. Box 28, Cedar Grove, NJ 07009 <br />Monday - Friday 9:00am to 5:00pm</p>
       <div>

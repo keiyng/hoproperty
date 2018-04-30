@@ -17,18 +17,7 @@ class Available extends Component {
         return (
           <div
             key={available.label}
-            style={{
-              float: 'left',
-              marginTop: '20px',
-              textAlign: 'left',
-              marginBottom: '40px',
-              marginRight: '22px',
-              backgroundColor: '#fff',
-              opacity: '0.9',
-              padding: '5px',
-              borderRadius: '3px',
-              border: '1px solid gray'
-            }}
+            className="availableBlock"
           >
             <img
               width="250px"

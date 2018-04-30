@@ -4,16 +4,21 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 
 class Home extends Component {
+
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
+    let d = new Date;
+
     return (
       <div style={{ textAlign: 'center'}}>
           <h1 style={{marginTop: '20px', fontSize: '28px'}}>✦NOW LEASING✦</h1>
           <strong><Link to="/application" className="btn btn-danger" style={{color: '#fff'}}>Apply Now</Link></strong>
         <Available />
+        <p>Copyright © Ho Property, LLC {d.getFullYear()}</p>
       </div>
     );
   }
