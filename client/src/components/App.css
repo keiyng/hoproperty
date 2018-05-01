@@ -24,8 +24,9 @@ label {
 }
 
 .navbar-brand {
-  font-family: 'Condiment', cursive;
+  font-family: 'Lancelot', cursive;
   font-size: 45px;
+  margin-bottom: -20px;
 }
 
 .btn-danger {
@@ -100,45 +101,41 @@ select,
 }
 
 .availableDetailsContainer {
-    padding-top: 20px;
-    height: 900px;
-    width: 800px;
-    margin: 0 auto;
-    overflow-x: hidden;
+  padding-top: 20px;
+  height: 900px;
+  width: 800px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-.availableDetailsContainer > div{
-    background-color:#fff;
-    opacity: .90;
-    padding-bottom: 10px;
-    padding-left: 50px
+.availableDetailsContainer > div {
+  background-color: #fff;
+  opacity: 0.9;
+  padding-bottom: 10px;
+  padding-left: 50px;
 }
 
 .detailsContainer h6 {
-    background-color: #5bb7b7;
-    padding: 3px;
-    padding-left: 10px;
-    color: #fff;
-    width: 200px;
-    letter-spacing: 4px;
-  }
-
-.select {
-    color: red;
+  background-color: #5bb7b7;
+  padding: 3px;
+  padding-left: 10px;
+  color: #fff;
+  width: 200px;
+  letter-spacing: 4px;
 }
 
 .sliderContainer {
-    width: 450px;
-    margin: 0 auto;
+  width: 450px;
+  margin: 0 auto;
 }
 
 .propertyIntro {
-    width: 500px;
+  width: 500px;
 }
 @media (max-width: 1000px) {
-    .availableDetailsContainer > div{
-        padding-left: 30px
-    }
+  .availableDetailsContainer > div {
+    padding-left: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -151,10 +148,10 @@ select,
   .availableDetailsContainer {
     width: 600px;
     margin: 0 auto;
-}
-.availableDetailsContainer > div{
-    padding-left: 30px
-}
+  }
+  .availableDetailsContainer > div {
+    padding-left: 30px;
+  }
   .availableBlock {
     margin-right: 0;
   }
@@ -163,29 +160,28 @@ select,
   }
   body {
     overflow-y: scroll;
-}
+  }
 }
 
 @media (max-width: 500px) {
   table {
-    width: 35%;
+    width: 30%;
   }
   .propertyIntro {
     width: 300px;
-}
-.availableDetailsContainer {
+  }
+  .availableDetailsContainer {
     width: 100%;
-}
-textarea {
+  }
+  textarea {
     width: 85%;
-}
-.sliderContainer {
+  }
+  .sliderContainer {
     width: 100%;
-}
-.availableDetailsContainer > div{
-    padding-left: 0
-}
-
+  }
+  .availableDetailsContainer > div {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 400px) {
@@ -200,5 +196,5 @@ textarea {
   }
   .availableDetailsContainer {
     width: 100%;
-}
+  }
 }
