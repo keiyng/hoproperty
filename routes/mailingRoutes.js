@@ -40,7 +40,7 @@ module.exports = app => {
 
     mailer.transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        res.json({error: 'We couldn\'t submit your message. Please try again'})
+        res.json({error: `We couldn\'t submit your message. Please try again ${err}`})
         console.log(err)
       } else {
         console.log(`email sent! ${info.response}`);
