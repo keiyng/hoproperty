@@ -22,6 +22,7 @@ module.exports = application => {
                         <p><span>Credit:</span> ${application.credit}</p>
                         <p><span>Evicted before?</span> ${application.eviction}</p>
                         <p><span>Bankrupted?</span> ${application.bankruptcy}</p>
+                        <p><span>Special Note:</span> ${application.note}</p>
                       </div>
                       <br />
                       <div>

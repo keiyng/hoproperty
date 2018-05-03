@@ -8,8 +8,7 @@ const Property = mongoose.model('properties');
 const broadcastTemplate = require('./mailing/templates/broadcast');
 
 const broadcastRule = new schedule.RecurrenceRule();
-broadcastRule.second = 10;
-// broadcastRule.dayOfWeek = 5;
+broadcastRule.dayOfWeek = 5;
 
 brodcastAvailables = async () => {
 let countyList = [];
@@ -33,13 +32,13 @@ availables.map(available => {
             replyTo: keys.emailFrom
           };
 
-          // mailer.transporter.sendMail(mailOptions, (err, info) => {
-          //   if (err) {
-          //     console.log(err);
-          //   } else {
-          //     console.log(`email sent! ${info.response}`);
-          //   }
-          // });
+          mailer.transporter.sendMail(mailOptions, (err, info) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(`email sent! ${info.response}`);
+            }
+          });
 
         });
         break;

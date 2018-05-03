@@ -32,7 +32,7 @@ module.exports = (subscriber, availables) => {
           .county {font-size: 1.4em}
           .rent {font-size: 1.5em; font-weight: bold; margin-top: 5px}
           .footer {text-align: center; font-size: 0.6em; clear: both; margin-top: 3px;}
-          #websiteLink {font-size: 3em}
+          #websiteLink {font-size: 1.5em}
           </style>
           </head>
               <body>
@@ -42,9 +42,9 @@ module.exports = (subscriber, availables) => {
                     ${dynamicTemplate}
                   </div>
                   <div class="footer">
-                  <p id="websiteLink">Check out more details and apply on https://hopropertyllc.com</p>
-                  <p><a href="https://hopropertyllc.com/update_preference">Change your Mailing Options</a></p>
-                  <p><a href="https://hopropertyllc.com/unsubscribe">Unsubsribe</a></p>
+                  <p id="websiteLink">Check out more details and apply online http://www.hoproperty.com</p>
+                  <p><a href="http://www.hoproperty.com/update_preference">Change your Mailing Options</a></p>
+                  <p><a href="http://www.hoproperty.com/unsubscribe">Unsubsribe</a></p>
                   </div>
               </body>
           </html>
