@@ -122,8 +122,12 @@ let SubscribeForm = ({ formValues, message, subscribe, history }) => {
       <div style={{backgroundColor: '#fafafa', opacity: '0.85', padding: '10px'}}>
       <form>{renderFields}</form>
       <button
-        onClick={() => subscribe(formValues, history)}
+        onClick={() => {
+          document.getElementById('submitSubscriptionButton').disabled = true; 
+          subscribe(formValues, history);
+        }}
         className="btn btn-info"
+        id="submitSubscriptionButton"
       >
         Subscribe
       </button>

@@ -39,7 +39,13 @@ let QueryForm = ({formValues, submitQuery, message, history}) => {
       <p style={{fontSize: 'smaller'}}>P.O. Box 28, Cedar Grove, NJ 07009 <br />Monday - Friday 9:00am to 5:00pm</p>
       <div>
         <form>{renderFields}</form>
-        <button onClick={() => submitQuery(formValues, history)} className="btn btn-info">Send</button>
+        <button onClick={() => {
+          document.getElementById('submitQueryButton').disabled = true; 
+          submitQuery(formValues, history);
+          }} 
+          className="btn btn-info"
+          id="submitQueryButton"
+          >Send</button>
         {message.error && <div style={{color: 'red', marginBottom: '10px'}}>{message.error}</div>}
         {message.success && <div style={{color: '#000', marginBottom: '10px', fontWeight: 'bold'}}>{message.success}</div>}
       </div>

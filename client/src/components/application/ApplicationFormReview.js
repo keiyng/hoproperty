@@ -31,9 +31,12 @@ const ApplicationFormReview = ({ onCancel, formValues, message, submitApplicatio
         Back
       </button>
       <button
-        onClick={() => submitApplication(formValues, history)}
-        disabled={submitting}
+        onClick={() => {
+          document.getElementById('submitApplicationButton').disabled = true; 
+          submitApplication(formValues, history);
+        }}
         className="btn btn-info"
+        id="submitApplicationButton"
       >
         Submit Application
         <span className="oi oi-envelope-closed" style={{marginLeft: '5px'}}></span>
