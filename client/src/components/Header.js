@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <nav style={{borderBottom: '1px solid gray', backgroundColor: '#ffffff'}}
-        className="navbar sticky-top navbar-expand-lg navbar-light"
+      <nav
+        className="navbar navbar-expand-lg navbar-light"
       >
         <a className="navbar-brand" href="/">
-          Ho Property, LLC
+        <img src="https://drive.google.com/uc?export=view&id=16ThvMrie15aUNqgQWVxii13uoHzy0rU0" alt="Ho Property LLC"/>
         </a>
         <button
           className="navbar-toggler"
@@ -36,26 +36,10 @@ class Header extends Component {
                 Application
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href=""
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
+            <li className="nav-item">
+              <Link to="/subscribe" className="nav-link">
                 Subscribe
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/subscribe">
-                  New Subscribers
-                </Link>
-                <Link className="dropdown-item" to="/update_preference">
-                  Change my Preference
-                </Link>
-              </div>
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link">

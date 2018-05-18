@@ -7,7 +7,6 @@ class Available extends Component {
   componentDidMount() {
     this.props.fetchProperties();
   }
-
   renderAvailable() {
     let properties = Array.from(this.props.properties);
     return properties
@@ -16,29 +15,23 @@ class Available extends Component {
         return (
           <div
             key={available.label}
-            className="availableBlock"
+            className="availableBlock col-xs-12 col-sm-6 col-xl-4"
+            style={{'padding': '1px'}}
           >
+            <Link className="viewDetails" to={`/property/${available.label}`}>View Details</Link>
             <img
-              width="250px"
-              height="180px"
+              className="availableImage"
               src={
                 available.images[0]
                   ? available.images[0]
-                  : 'https://drive.google.com/uc?export=view&id=16iXzf2QZ4vf42Lzy55Z6NDViDd2Cs54G'
+                  : "https://drive.google.com/uc?export=view&id=16iXzf2QZ4vf42Lzy55Z6NDViDd2Cs54G"
               }
               alt={available.label}
             />
-            <div style={{fontSize: '1.1em'}}>
-              <strong>${available.rent}</strong>
+            <div className="availableDescription">
+              <p>{available.address.slice(0, available.address.indexOf(','))}</p>
+              <p>{available.township_borough}<span>${available.rent}</span></p>
             </div>
-            <div style={{ width: '200px' }}>{available.address}</div>
-            <Link
-              className="btn btn-info"
-              style={{ width: '250px', color: '#fff', marginTop: '10px' }}
-              to={`/property/${available.label}`}
-            >
-              View Details
-            </Link>
           </div>
         );
       });
@@ -46,8 +39,9 @@ class Available extends Component {
 
   render() {
     return (
-      <div className="availableContainer">
-        <div>{this.renderAvailable()}</div>
+      <div>
+        <div className="nowLeasing row d-flex justify-content-center">NOW LEASING</div>
+        <div className="row">{this.renderAvailable()}</div>
       </div>
     );
   }

@@ -1,55 +1,104 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAvailableDetails } from '../../actions';
-import SimpleSlider from '../../utils/ImageSlideshow';
+import ImageSlider from '../../utils/ImageSlider';
 import { Link } from 'react-router-dom';
+import GoogleMap from '../google_map/Map';
+import axios from 'axios';
+import keys from '../../keys';
 
 class AvailableDetails extends Component {
   componentDidMount() {
     this.props.fetchAvailableDetails(this.props.match.params.label);
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${
+          this.props.properties.address
+        }&key=${keys.googleMapKey}`
+      )
+      .then(res => {
+        if (this.state == prevState) {
+          this.setState({ loc: res.data.results[0].geometry.location });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     const property = this.props.properties;
     const images = property.images;
+
     return (
       <div className="availableDetailsContainer">
-      <div>
-        <div className="sliderContainer">
-        <SimpleSlider images={images} />
+        <div className="upperDetailsContainer row">
+          <div className="sliderContainer col-md-5 col-xl-4">
+            <ImageSlider images={images} />
+          </div>
+          <div className="mapContainer col-md-7 col-xl-8">
+            {this.state &&
+              this.state.loc &&
+              property.address && (
+                <GoogleMap
+                  location={this.state.loc}
+                  address={property.address}
+                />
+              )}
+          </div>
         </div>
-        <div className="detailsContainer" style={{ marginTop: '40px'}}>
-        <h5 style={{marginBottom: '20px'}}>{property.address}</h5>
-          <div style={{float: 'left', margin: '10px'}}>
-            <h6>Rent &amp; Fees</h6>
-            <div>${property.rent}/month</div>
-            <div>1.5 month security deposit</div>
-            <div>Tenant pays for all utilities</div>
+        <div className="lowerDetailsContainer">
+          <h5>{property.address}</h5>
+          <div className="detailsContainer row">
+            <div style={{ borderRight: '1px solid gray' }} className="col-md">
+              <h6>RENT &amp; FEES</h6>
+              <ul style={{ textAlign: 'center' }}>
+                <li>${property.rent}/month</li>
+                <li>1.5 month security deposit</li>
+                <li>Tenant is responsible for all utilities</li>
+              </ul>
+            </div>
+            <div style={{ borderRight: '1px solid gray' }} className="col-md">
+              <h6>FEATURES</h6>
+              <ul style={{ textAlign: 'center' }}>
+                <li>{property.type}</li>
+                <li>
+                  {property.bedroom}{' '}
+                  {property.bedroom == 1 ? 'bedroom' : 'bedrooms'}
+                </li>
+                <li>
+                  {property.bathroom}{' '}
+                  {property.bathroom == 1 ? 'bathroom' : 'bathrooms'}
+                </li>
+                <li>{property.square_feet == '' ? '-' : property.square_feet} sq. feet</li>
+                <li>{property.laundry}</li>
+                <li>Parking - {property.parking}</li>
+              </ul>
+            </div>
+            <div className="col-md">
+              <h6>MUNICIPALITY</h6>
+              <ul style={{ textAlign: 'center' }}>
+                <li>{property.county} county</li>
+                <li>{property.township_borough}</li>
+              </ul>
+            </div>
           </div>
-          <div style={{float: 'left', margin: '10px' }}>
-            <h6>Features</h6>
-            <div>{property.type}</div>
-            <div>{property.bedroom} bedrooms</div>
-            <div>{property.bathroom} bathrooms</div>
-            <div>{property.square_feet} sq. feet</div>
-            <div>{property.laundry}</div>
-            <div>{property.parking} parking</div>
-          </div>
-          <div style={{float: 'left', margin: '10px' }}>
-            <h6>Location</h6>
-            <div>{property.county} county</div>
-            <div>{property.township_borough}</div>
-          </div>
-          <div style={{clear: 'left', width: '400px', margin: '0 auto'}}>
-
-            <Link to="/application" className="btn btn-danger" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
+          <div className="actionContainer">
+            <Link
+              to="/application"
+              className="applyLink"
+            >
               Apply Now
             </Link>
-
-
-            <Link to="/" className="btn btn-secondary" style={{ color: '#fff', marginTop: '25px', marginRight: '15px' }}>
+            <Link
+              to="/"
+              className="backLink"
+            >
               Back
             </Link>
-            </div>
           </div>
         </div>
       </div>
