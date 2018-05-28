@@ -34,7 +34,6 @@ class ImageSlider extends Component {
       prevArrow: <Arrow />
     };
     return (
-      // <div className="" style={{marginRight: '5px'}}>
       <i>
         <Slider {...settings}>{this.renderImages()}</Slider>
       </i>

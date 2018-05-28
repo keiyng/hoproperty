@@ -26,10 +26,6 @@ a:hover {
   display: none;
 }
 
-table tr {
-  border-bottom: 1px solid gray;
-}
-
 label {
   margin-right: 8px;
 }
@@ -188,7 +184,7 @@ footer {
 
 .slick-slider {
   padding: 0;
-  width: 480px;
+  width: 108%;
 }
 
 .map {
@@ -223,9 +219,28 @@ footer {
   transition: 0.3s all;
 }
 
-.propertyIntro {
+.propertiesIntro {
   width: 500px;
+  margin: 0 auto;
 }
+
+.propertiesSearchInput {
+  border: 1px solid gray;
+  width: 250px;
+  margin: 20px auto;
+}
+
+.propertiesTable {
+  background-color: #fff;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 60vw;
+}
+
+.propertiesTable tr {
+  border-bottom: 1px solid #999999;
+}
+
 @media (max-width: 1000px) {
   .slick-slider {
     width: 400px;
@@ -234,8 +249,8 @@ footer {
 }
 
 @media (max-width: 800px) {
-  table {
-    width: 80%;
+  .propertiesTable th {
+    font-size: 0.8em;
   }
 
   .detailsImages {
@@ -251,14 +266,18 @@ footer {
   .mapContainer {
     margin-top: 30px;
   }
+  .slick-slider {
+    width: 360px;
+  }
 }
 
 @media (max-width: 500px) {
-  table {
-    width: 30%;
-  }
-  .propertyIntro {
+  .propertiesIntro {
     width: 300px;
+  }
+  .propertiesTable {
+    width: 95vw;
+    font-size: 0.7em;
   }
   textarea {
     width: 85%;

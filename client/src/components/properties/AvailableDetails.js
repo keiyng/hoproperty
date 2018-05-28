@@ -20,7 +20,7 @@ class AvailableDetails extends Component {
         }&key=${keys.googleMapKey}`
       )
       .then(res => {
-        if (this.state == prevState) {
+        if (this.state === prevState) {
           this.setState({ loc: res.data.results[0].geometry.location });
         }
       })
@@ -73,7 +73,7 @@ class AvailableDetails extends Component {
                   {property.bathroom}{' '}
                   {property.bathroom == 1 ? 'bathroom' : 'bathrooms'}
                 </li>
-                <li>{property.square_feet == '' ? '-' : property.square_feet} sq. feet</li>
+                <li>{property.square_feet === '' ? '-' : property.square_feet} sq. feet</li>
                 <li>{property.laundry}</li>
                 <li>Parking - {property.parking}</li>
               </ul>

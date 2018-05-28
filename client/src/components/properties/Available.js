@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { fetchProperties } from '../../actions';
 import { Link } from 'react-router-dom';
 
-class Available extends Component {
+class Available extends PureComponent {
   componentDidMount() {
     this.props.fetchProperties();
   }
+  
   renderAvailable() {
     let properties = Array.from(this.props.properties);
     return properties
@@ -38,6 +39,7 @@ class Available extends Component {
   }
 
   render() {
+
     return (
       <div>
         <div className="nowLeasing row d-flex justify-content-center">NOW LEASING</div>
