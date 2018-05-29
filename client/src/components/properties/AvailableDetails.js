@@ -67,11 +67,11 @@ class AvailableDetails extends Component {
                 <li>{property.type}</li>
                 <li>
                   {property.bedroom}{' '}
-                  {property.bedroom == 1 ? 'bedroom' : 'bedrooms'}
+                  {Number(property.bedroom) === 1 ? 'bedroom' : 'bedrooms'}
                 </li>
                 <li>
                   {property.bathroom}{' '}
-                  {property.bathroom == 1 ? 'bathroom' : 'bathrooms'}
+                  {Number(property.bathroom) === 1 ? 'bathroom' : 'bathrooms'}
                 </li>
                 <li>{property.square_feet === '' ? '-' : property.square_feet} sq. feet</li>
                 <li>{property.laundry}</li>
@@ -89,13 +89,13 @@ class AvailableDetails extends Component {
           <div className="actionContainer">
             <Link
               to="/application"
-              className="applyLink"
+              className="forward"
             >
               Apply Now
             </Link>
             <Link
               to="/"
-              className="backLink"
+              className="backward"
             >
               Back
             </Link>

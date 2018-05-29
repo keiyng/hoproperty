@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { fetchProperties } from '../../actions';
 import { Link } from 'react-router-dom';

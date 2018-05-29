@@ -198,8 +198,8 @@ footer {
   justify-content: center;
 }
 
-.actionContainer .applyLink, 
-.actionContainer .backLink {
+.actionContainer .forward, 
+.actionContainer .backward {
   color: #fff;
   border-radius: 4px;
   padding: 5px;
@@ -208,13 +208,14 @@ footer {
   background-color: #5D1919;
   margin: 8px;
   letter-spacing: 1px;
+  outline: none;
 }
-.actionContainer .backLink {
+.actionContainer .backward {
   background-color: gray
 }
 
-.actionContainer .applyLink:hover, 
-.actionContainer .backLink:hover {
+.actionContainer .forward:hover, 
+.actionContainer .backward:hover {
   opacity: .9;
   transition: 0.3s all;
 }
@@ -241,6 +242,47 @@ footer {
   border-bottom: 1px solid #999999;
 }
 
+.applicationContainer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.applicationContainer h3 {
+  background-color: #5D1919;
+  padding: 5px;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.applicationFormContainer {
+  border: 1px solid #5d1919;
+  border-radius: 3px;
+  padding: 10px;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.fieldsReview {
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.fieldsReview span {
+  font-size: 1.3em;
+}
+
+.errorMessage {
+  color: red;
+  margin-bottom: 10px; 
+}
+
+.successMessage {
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 @media (max-width: 1000px) {
   .slick-slider {
     width: 400px;
@@ -259,6 +301,10 @@ footer {
 
   .map {
     height: 240px;
+  }
+
+  .applicationFormContainer {
+    width: 80vw;
   }
 }
 
@@ -307,6 +353,9 @@ footer {
     height: 220px;
     width: 300px;
     margin: 0 auto;
+  }
+  .applicationFormContainer {
+    width: 95vw;
   }
 }
 

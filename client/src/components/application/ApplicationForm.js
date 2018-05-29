@@ -4,108 +4,120 @@ import { connect } from 'react-redux';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { Link } from 'react-router-dom';
 import validateEmails from '../../utils/validateEmail';
-import {applicationFields} from '../form_fields/formFields';
+import { applicationFields } from '../form_fields/formFields';
 import TextField from '../form_fields/TextField';
 import SelectField from '../form_fields/SelectField';
 import TextareaField from '../form_fields/TextareaField';
 
-
 class ApplicationForm extends Component {
   renderFields() {
-    return _.map(applicationFields, ({ label, name, type, options, optional }) => {
-      if (type === 'select' && !optional) {
-        return (
-          <Field
-            key={name}
-            type="select"
-            className="select"
-            label={label}
-            name={name}
-            options={options}
-            component={SelectField}
-          >
-          </Field>
-        )
-      } else if (type !== 'select' && type !== 'textarea' && !optional) {
-        return (
-          <Field
-            key={name}
-            component={TextField}
-            type={type}
-            label={label}
-            name={name}
-          />
-        );
-      } else if (type === 'textarea') {
-        return (
-          <Field
-            key={name}
-            component={TextareaField}
-            type={type}
-            label={label}
-            name={name}
-          />
-        );
+    return _.map(
+      applicationFields,
+      ({ label, name, type, options, optional }) => {
+        if (type === 'select' && !optional) {
+          return (
+            <Field
+              key={name}
+              type="select"
+              className="select"
+              label={label}
+              name={name}
+              options={options}
+              component={SelectField}
+            />
+          );
+        } else if (type !== 'select' && type !== 'textarea' && !optional) {
+          return (
+            <Field
+              key={name}
+              component={TextField}
+              type={type}
+              label={label}
+              name={name}
+            />
+          );
+        } else if (type === 'textarea') {
+          return (
+            <Field
+              key={name}
+              component={TextareaField}
+              type={type}
+              label={label}
+              name={name}
+            />
+          );
+        }
       }
-    });
+    );
   }
   renderOptionalFields() {
-    return _.map(applicationFields, ({ label, name, type, options, optional }) => {
-      if (type === 'select' && optional) {
-        return (
-          <Field
-            key={name}
-            className="select"
-            type="select"
-            label={label}
-            name={name}
-            options={options}
-            component={SelectField}
-          >
-          </Field>
-        )
-      } else if (type !== 'select' && optional) {
-        return (
-          <Field
-            key={name}
-            component={TextField}
-            type={type}
-            label={label}
-            name={name}
-          />
-        );
+    return _.map(
+      applicationFields,
+      ({ label, name, type, options, optional }) => {
+        if (type === 'select' && optional) {
+          return (
+            <Field
+              key={name}
+              className="select"
+              type="select"
+              label={label}
+              name={name}
+              options={options}
+              component={SelectField}
+            />
+          );
+        } else if (type !== 'select' && optional) {
+          return (
+            <Field
+              key={name}
+              component={TextField}
+              type={type}
+              label={label}
+              name={name}
+            />
+          );
+        }
       }
-    });
+    );
   }
 
   render() {
-    const { handleSubmit, onApplicationSubmit, submitting} = this.props;
+    const { handleSubmit, onApplicationSubmit, submitting } = this.props;
 
     return (
       <div>
-        <div style={{textAlign: 'center', marginTop: '10px'}}>
-        <h3 style={{fontWeight: 'bold'}}>Rental Application</h3>
-        <p><em>We only accept online application. All fields are required.</em></p>
+        <div className="applicationContainer">
+          <h3>Rental Application</h3>
+          <p style={{ padding: '2px' }}>
+            <em>We only accept online application. All fields are required.</em>
+          </p>
         </div>
-        <div style={{backgroundColor: '#fafafa', opacity: '0.85', paddingTop: '10px'}}>
-        <form onSubmit={handleSubmit(onApplicationSubmit)}>
-          {this.renderFields()}
-          {this.props.coApplicant === "Yes" && this.renderOptionalFields()}
-          <p style={{padding: '0 40px', fontSize: 'smaller'}}><em>By submitting this application, I/We authorize Ho Property, LLC and/or a third party 
-          to conduct an employment/credit check concerning my/our application and to verify all references. 
-          I/We declare that all information listed on this application is true and accurate. 
-          I/We understand that unclear and/or false information on this application renders this application invalid.</em></p>
-          <div style={{paddingBottom: '25px'}}>
-         <Link to="/" className='btn btn-secondary' style={{color: '#fff', marginRight: '20px'}}>
-            Cancel
-          </Link>
+        <div className="applicationFormContainer">
+          <form onSubmit={handleSubmit(onApplicationSubmit)}>
+            {this.renderFields()}
+            {this.props.coApplicant === 'Yes' && this.renderOptionalFields()}
+            <p>
+              By submitting this application, I/We authorize Ho Property, LLC
+              and/or a third party to conduct an employment/credit check
+              concerning my/our application and to verify all references. I/We
+              declare that all information listed on this application is true
+              and accurate. I/We understand that unclear and/or false
+              information on this application renders this application invalid.
+            </p>
+            <div className="actionContainer">
+              <Link to="/" className="backward">
+                Cancel
+              </Link>
 
-          <button disabled={submitting} type="submit" className="btn btn-info">
-            Next
-            <span className="oi oi-arrow-thick-right" style={{marginLeft: '5px'}}></span>
-          </button>
-          </div>
-        </form>
+              <button disabled={submitting} type="submit" className="forward">
+                Next
+                <span
+                  className="oi oi-arrow-thick-right"
+                  style={{ marginLeft: '5px' }}
+                />
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     );
@@ -121,7 +133,7 @@ function validate(values) {
     if (!values[name] && noValueError !== '') {
       errors[name] = noValueError;
     } else {
-      values[name] === 'none'
+      values.name = 'none';
     }
   });
 
@@ -131,17 +143,16 @@ function validate(values) {
 ApplicationForm = reduxForm({
   validate,
   form: 'applicationForm',
-  destroyOnUnmount: false,
+  destroyOnUnmount: false
 })(ApplicationForm);
 
-const selector = formValueSelector('applicationForm')
+const selector = formValueSelector('applicationForm');
 
 ApplicationForm = connect(state => {
-  let coApplicant = selector(state, 'coApplicant')
+  let coApplicant = selector(state, 'coApplicant');
   return {
     coApplicant
-  }
+  };
 })(ApplicationForm);
 
 export default ApplicationForm;
-

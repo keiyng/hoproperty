@@ -11,7 +11,6 @@ import QueryForm from './QueryForm';
 import SubscribeForm from './SubscribeForm';
 import UnsubscribeForm from './UnsubscribeForm';
 import UpdatePreferenceForm from './UpdatePreferenceForm';
-import GoogleMap from './google_map/Map'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './App.css';
@@ -33,7 +32,6 @@ class App extends Component {
             <Route exact path="/subscribe" component={SubscribeForm}/>
             <Route exact path="/update_preference" component={UpdatePreferenceForm}/>
             <Route exact path="/unsubscribe" component={UnsubscribeForm}/>
-            <Route exact path="/map" component={GoogleMap}/>
           </div>
         </BrowserRouter>
         <footer>Copyright © Ho Property, LLC {d.getFullYear()}</footer>

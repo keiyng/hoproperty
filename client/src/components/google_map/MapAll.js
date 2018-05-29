@@ -5,7 +5,7 @@ import axios from 'axios';
 import shortid from 'shortid';
 
 const Marker = () => (
-  <div style={{ width: '50px'}}>
+  <div style={{ width: '50px' }}>
     <span className="oi oi-home" />
   </div>
 );
@@ -27,7 +27,10 @@ class GoogleMap extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    if (this.props !== nextProps) {
+    if (
+      this.props !== nextProps &&
+      this.state.locList.length !== nextProps.properties.length
+    ) {
       for (let i = 0; i < nextProps.properties.length; i++) {
         axios
           .get(
