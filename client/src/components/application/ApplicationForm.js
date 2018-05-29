@@ -86,7 +86,7 @@ class ApplicationForm extends Component {
 
     return (
       <div>
-        <div className="applicationContainer">
+        <div className="pageContainer">
           <h3>Rental Application</h3>
           <p style={{ padding: '2px' }}>
             <em>We only accept online application. All fields are required.</em>

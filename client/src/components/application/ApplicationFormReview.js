@@ -22,18 +22,16 @@ const ApplicationFormReview = ({
   });
 
   return (
-    <div className="applicationContainer">
+    <div className="pageContainer">
       <h3>Please confirm your entries:</h3>
       <div className="applicationFormContainer">{reviewFields}</div>
       {message.error && (
-        <div style={{ color: 'red', marginBottom: '10px' }}>
+        <div className="errorMessage">
           {message.error}
         </div>
       )}
       {message.success && (
-        <div
-          style={{ color: '#000', marginBottom: '10px', fontWeight: 'bold' }}
-        >
+        <div className="successMessage">
           {message.success}
         </div>
       )}

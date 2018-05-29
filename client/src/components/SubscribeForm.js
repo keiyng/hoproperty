@@ -14,8 +14,8 @@ let SubscribeForm = ({ formValues, message, subscribe, history }) => {
     ({ label, name, type, options }) => {
       if (type === 'checkbox') {
         return (
-          <div key={name} className="subscribe-container">
-          <p style={{fontWeight: 'bold'}}>Select the county you want to receive updates on: </p>
+          <div key={name} className="subscribeContainer">
+          <p style={{fontSize: '1.1em'}}>Select the county you want to receive updates on: </p>
           <label>{options[1]}</label>
             <Field
               name={options[1]}
@@ -116,23 +116,26 @@ let SubscribeForm = ({ formValues, message, subscribe, history }) => {
 
   return (
 
-    <div style={{textAlign: 'center', paddingTop: '20px', height: '900px'}}>
-      <p style={{textAlign: 'left', marginBottom: '20px'}}> We send out e-mail notification when rentals are available in your area. <br />
+    <div className="pageContainer">
+    <h3>Subscribe to Us</h3>
+      <p> We send out e-mail notification when rentals are available in your area of interest. <br />
       Subscribe now and be the first to apply for your future home.</p>
-      <div style={{backgroundColor: '#fafafa', opacity: '0.85', padding: '10px'}}>
+      <div className="applicationFormContainer">
       <form>{renderFields}</form>
+      <div className="actionContainer">
       <button
         onClick={() => {
           document.getElementById('submitSubscriptionButton').disabled = true; 
           subscribe(formValues, history);
         }}
-        className="btn btn-info"
+        className="forward"
         id="submitSubscriptionButton"
       >
         Subscribe
       </button>
-      {message.error && <div style={{color: 'red'}}>{message.error}</div>}
-      {message.success && <div style={{color: 'green'}}>{message.success}</div>}
+      </div>
+      {message.error && <div className="errorMessage">{message.error}</div>}
+      {message.success && <div className="successMessage">{message.success}</div>}
       </div>
     </div>
   );

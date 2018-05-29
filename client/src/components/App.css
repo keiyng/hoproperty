@@ -47,7 +47,7 @@ select,
   outline: none;
 }
 
-.subscribe-container input {
+.subscribeContainer input {
   margin-right: 15px;
   margin-left: -5px;
 }
@@ -242,12 +242,12 @@ footer {
   border-bottom: 1px solid #999999;
 }
 
-.applicationContainer {
+.pageContainer {
   text-align: center;
   margin-top: 10px;
 }
 
-.applicationContainer h3 {
+.pageContainer h3 {
   background-color: #5D1919;
   padding: 5px;
   color: #fff;
