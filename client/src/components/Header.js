@@ -8,7 +8,7 @@ class Header extends Component {
         className="navbar navbar-expand-lg navbar-light"
       >
         <a className="navbar-brand" href="/">
-        <img src="https://drive.google.com/uc?export=view&id=16ThvMrie15aUNqgQWVxii13uoHzy0rU0" alt="Ho Property LLC"/>
+        <img src="https://drive.google.com/uc?export=view&id=1Z257Go1bkV2YfDSThhY7MhlxItJxaXDm" alt="Ho Property LLC"/>
         </a>
         <button
           className="navbar-toggler"
