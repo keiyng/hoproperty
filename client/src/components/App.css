@@ -184,7 +184,7 @@ footer {
 
 .slick-slider {
   padding: 0;
-  width: 108%;
+  width: 100%;
 }
 
 .map {
@@ -285,7 +285,7 @@ footer {
 
 @media (max-width: 1000px) {
   .slick-slider {
-    width: 400px;
+    width: 380px;
     margin: 0 auto;
   }
 }

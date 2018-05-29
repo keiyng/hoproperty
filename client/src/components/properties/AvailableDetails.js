@@ -36,10 +36,10 @@ class AvailableDetails extends Component {
     return (
       <div className="availableDetailsContainer">
         <div className="upperDetailsContainer row">
-          <div className="sliderContainer col-md-5 col-xl-4">
+          <div className="sliderContainer col-md-5 col-lg-4">
             <ImageSlider images={images} />
           </div>
-          <div className="mapContainer col-md-7 col-xl-8">
+          <div className="mapContainer col-md-7 col-lg-8">
             {this.state &&
               this.state.loc &&
               property.address && (
