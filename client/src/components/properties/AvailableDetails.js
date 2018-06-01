@@ -74,7 +74,7 @@ class AvailableDetails extends Component {
                   {Number(property.bathroom) === 1 ? 'bathroom' : 'bathrooms'}
                 </li>
                 <li>{property.square_feet === '' ? '-' : property.square_feet} sq. feet</li>
-                <li>{property.laundry}</li>
+                <li>Laundry - {property.laundry}</li>
                 <li>Parking - {property.parking}</li>
               </ul>
             </div>
