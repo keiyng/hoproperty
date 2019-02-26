@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
 import keys from '../../keys';
 
 const Marker = ({ text }) => <div style={{width: '150px', fontWeight: 'bold', fontSize: '1.4em'}}><span className="oi oi-home"></span>{text}</div>;
 
-class GoogleMap extends Component {
+class GoogleMap extends PureComponent {
 
   static defaultProps = {
     center: {
@@ -16,6 +16,7 @@ class GoogleMap extends Component {
   
 
   render() {
+    const address = this.props.address.slice()
     return (
       <div className="map">
         <GoogleMapReact
@@ -26,7 +27,7 @@ class GoogleMap extends Component {
           <Marker
             lat={this.props.location.lat}
             lng={this.props.location.lng}
-            text={this.props.address.slice(0, this.props.address.indexOf(','))}
+            text={address.slice(0, this.props.address.indexOf(','))}
           />
         </GoogleMapReact>
       </div>

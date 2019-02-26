@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,7 @@ import TextField from '../form_fields/TextField';
 import SelectField from '../form_fields/SelectField';
 import TextareaField from '../form_fields/TextareaField';
 
-class ApplicationForm extends Component {
+class ApplicationForm extends PureComponent {
   renderFields() {
     return _.map(
       applicationFields,

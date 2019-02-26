@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { fetchAvailableDetails } from '../../actions';
 import ImageSlider from '../../utils/ImageSlider';
@@ -7,7 +7,7 @@ import GoogleMap from '../google_map/Map';
 import axios from 'axios';
 import keys from '../../keys';
 
-class AvailableDetails extends Component {
+class AvailableDetails extends PureComponent {
   componentDidMount() {
     this.props.fetchAvailableDetails(this.props.match.params.label);
   }
@@ -46,6 +46,7 @@ class AvailableDetails extends Component {
                 <GoogleMap
                   location={this.state.loc}
                   address={property.address}
+                  
                 />
               )}
           </div>

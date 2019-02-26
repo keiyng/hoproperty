@@ -18,7 +18,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    let d = new Date;
+    let d = new Date();
     return (
       <div>
         <BrowserRouter>

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {reduxForm} from 'redux-form';
 import ApplicationForm from './ApplicationForm';
 import ApplicationFormReview from './ApplicationFormReview';
 
-class Application extends Component {
+class Application extends PureComponent {
     state = { showFormReview: false };
   
     renderContent() {

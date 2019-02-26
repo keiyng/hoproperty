@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropertySearch from './PropertySearch';
 import { fetchProperties } from '../../actions';
 import GoogleMap from '../google_map/MapAll';
 
-class Property extends Component {
+class Property extends PureComponent {
   componentDidMount() {
     this.props.fetchProperties();
   }

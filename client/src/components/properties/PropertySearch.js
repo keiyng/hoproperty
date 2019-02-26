@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-class PropertySearch extends Component {
+class PropertySearch extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,8 +44,9 @@ class PropertySearch extends Component {
   }
 
   onChangeHandler(e) {
+    const val = e.target.value.slice()
     this.setState({
-      input: e.target.value
+      input: val
     });
   }
 

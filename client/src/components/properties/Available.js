@@ -2,10 +2,29 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { fetchProperties } from '../../actions';
 import { Link } from 'react-router-dom';
+import Loading from '../Loading'
 
 class Available extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state ={
+      loading: false
+    }
+  }
+
   componentDidMount() {
     this.props.fetchProperties();
+    this.setState({
+      loading: true
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.loading) {
+      this.setState({
+        loading: false
+      })
+    }
   }
   
   renderAvailable() {
@@ -39,10 +58,10 @@ class Available extends PureComponent {
   }
 
   render() {
-
     return (
       <div>
         <div className="nowLeasing row d-flex justify-content-center">NOW LEASING</div>
+        {this.state.loading && <Loading />}
         <div className="row">{this.renderAvailable()}</div>
       </div>
     );

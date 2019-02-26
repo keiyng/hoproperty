@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Available from './properties/Available';
 import {connect} from 'react-redux';
 
-class Home extends Component {
+class Home extends PureComponent {
 
   render() {
     return (

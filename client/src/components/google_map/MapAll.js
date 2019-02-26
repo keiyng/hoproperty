@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import GoogleMapReact from 'google-map-react';
 import keys from '../../keys';
 import axios from 'axios';
 import shortid from 'shortid';
 
-const Marker = () => (
+const Marker = ({text}) => (
   <div style={{ width: '50px' }}>
     <span className="oi oi-home" />
   </div>
 );
 
-class GoogleMap extends Component {
+class GoogleMap extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
