@@ -21,7 +21,5 @@ module.exports = app => {
       return res.send(property);
     }
     res.status(404).send("this page doesn't exist");
-
-    console.log('this is /property/:label');
   });
 };

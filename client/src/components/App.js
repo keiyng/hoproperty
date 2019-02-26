@@ -34,7 +34,10 @@ class App extends Component {
             <Route exact path="/unsubscribe" component={UnsubscribeForm}/>
           </div>
         </BrowserRouter>
-        <footer>Copyright © Ho Property, LLC {d.getFullYear()}</footer>
+        <footer>
+          Copyright © Ho Property, LLC {d.getFullYear()}
+          <br /><span style={{fontSize: 'small'}}>Dveloped by Kei Ng</span>
+        </footer>
       </div>
     );
   }

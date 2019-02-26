@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-const proxy = require('http-proxy-middleware');
 
 require('./models/Property');
 require('./models/Subscriber');

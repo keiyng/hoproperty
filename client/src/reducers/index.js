@@ -4,7 +4,7 @@ import propertyReducer from './propertyReducer';
 import messageReducer from './messageReducer';
 
 export default combineReducers({
-  //all keys here are the keys of the state object
+  //all keys here are keys of the state object
   properties: propertyReducer,
   form: reduxForm,
   message: messageReducer

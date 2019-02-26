@@ -35,7 +35,7 @@ class PropertySearch extends PureComponent {
               {res.available ? (
                 <Link to={`/property/${res.label}`}>available for rent</Link>
               ) : (
-                <Link to="/contact">ask us</Link>
+                "occupied"
               )}
             </td>
           </tr>
@@ -61,7 +61,7 @@ class PropertySearch extends PureComponent {
           value={this.state.input}
           type="text"
           onChange={this.onChangeHandler.bind(this)}
-          placeholder="search city, zip or county"
+          placeholder=" search city, zip or county"
           size="40"
           className="propertiesSearchInput"
         />
@@ -75,7 +75,7 @@ class PropertySearch extends PureComponent {
                 <th>Address</th>
                 <th>County</th>
                 <th>Bed</th>
-                <th>Availability</th>
+                <th>Status</th>
               </tr>
             )}
           </thead>
