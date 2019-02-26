@@ -1,19 +1,16 @@
 const express = require('express');
-const fs = require('fs');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const proxy = require('http-proxy-middleware');
 
 require('./models/Property');
 require('./models/Subscriber');
 
-mongoose.connect(keys.mongoURI);
-
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 const app = express();
 
 app.use(bodyParser.json());
-
 
 require('./routes/propertyRoutes')(app);
 require('./routes/mailingRoutes')(app);

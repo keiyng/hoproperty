@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import _ from 'lodash';
 
@@ -13,7 +13,7 @@ function Arrow(props) {
   );
 }
 
-class ImageSlider extends Component {
+class ImageSlider extends PureComponent {
   renderImages() {
     return _.map(this.props.images, image => {
       return (

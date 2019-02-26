@@ -18,13 +18,15 @@ module.exports = app => {
       options
     };
 
-    const existingSubscriber = await Subscriber.findOne({email: subscriber.email});
+    const existingSubscriber = await Subscriber.findOne({
+      email: subscriber.email
+    });
 
     if (existingSubscriber) {
-      res.json({error: 'This email is already on our subscribers list'})
+      res.json({ error: 'This email is already on our subscribers list' });
     } else {
       const newSubscriber = await new Subscriber(subscriber).save();
-      res.json({success: 'Thank you. You\'ve been subscribed successfully.'})
+      res.json({ success: "Thank you. You've been subscribed successfully." });
     }
   });
 
@@ -39,31 +41,33 @@ module.exports = app => {
       }
     }
 
-    const existingSubscriber = await Subscriber.findOneAndUpdate({email: email}, {options: options});
+    const existingSubscriber = await Subscriber.findOneAndUpdate(
+      { email: email },
+      { options: options }
+    );
 
-    if(existingSubscriber === null) {
-      res.json({error: 'This email is not on our subscribers list'})
+    if (existingSubscriber === null) {
+      res.json({ error: 'This email is not on our subscribers list' });
     } else {
-      res.json({success: 'Your preference has been updated successfully'})
+      res.json({ success: 'Your preference has been updated successfully' });
     }
-  })
-
+  });
 
   app.delete('/api/unsubscribe/:email', async (req, res) => {
     const email = req.params.email;
 
-    Subscriber.findOneAndRemove({email: email}, (err, doc) => {
-      if(err) {
-        console.log('error')
-        res.json({error: 'Error occured and we were not able to unsubscribe'})
+    Subscriber.findOneAndRemove({ email: email }, (err, doc) => {
+      if (err) {
+        console.log('error');
+        res.json({
+          error: 'Error occured and we were not able to unsubscribe'
+        });
       }
-      if(doc === null) {
-        res.json({error : 'This email is not on our subscribers list'})
+      if (doc === null) {
+        res.json({ error: 'This email is not on our subscribers list' });
       } else {
-        res.json({success: 'You have been unsubscribed'})
+        res.json({ success: 'You have been unsubscribed' });
       }
     });
-  })
-
-
+  });
 };

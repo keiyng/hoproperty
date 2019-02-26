@@ -16,6 +16,7 @@ class GoogleMap extends PureComponent {
     this.state = {
       locList: []
     };
+    this.locData = []
   }
 
   static defaultProps = {
@@ -39,24 +40,22 @@ class GoogleMap extends PureComponent {
             }&key=${keys.googleMapKey}`
           )
           .then(res => {
-            this.setState({
-              locList: [
-                ...this.state.locList,
-                res.data.results[0].geometry.location
-              ]
-            });
+            this.locData.push(res.data.results[0].geometry.location)
+            if(this.locData.length === nextProps.properties.length) {
+              this.setState({
+              locList: this.locData
+            });              
+            }
           })
           .catch(err => {
             console.log(err);
-            this.setState({ locList: [...this.state.locList, {}] });
+            this.locData.push({})
           });
       }
     }
   }
-
   renderMarkers() {
     let markers = [];
-
     for (let i = 0; i < this.state.locList.length; i++) {
       if (
         typeof this.state.locList[i].lat === 'number' &&

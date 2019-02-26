@@ -2,30 +2,23 @@
   "name": "hopropertyllc-node-react-mongo-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/auth/google": {
-      "target": "http://localhost:5000"
-    },
-    "/api/*": {
-      "target": "http://localhost:5000"
-    }
-  },
   "dependencies": {
     "axios": "^0.18.0",
+    "http-proxy-middleware": "^0.19.0",
     "bootstrap": "^4.0.0",
     "google-map-react": "^1.0.3",
     "materialize-css": "^0.100.2",
     "open-iconic": "^1.1.1",
-    "react": "^16.2.0",
+    "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.0.3",
     "react-slick": "^0.23.1",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "redux-form": "^7.3.0",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.3.0",
     "shortid": "^2.2.8",
     "slick-carousel": "^1.8.1"
   },
@@ -34,5 +27,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
